@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts — Inter for fallback body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Adobe Typekit — Scandia Web (replace kit ID with your actual Typekit project ID) */
+@import url("https://use.typekit.net/PLACEHOLDER_KIT_ID.css");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-foreground bg-background leading-relaxed;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-semibold tracking-editorial leading-editorial text-ink;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply text-base md:text-lg text-muted leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-primary-light text-primary-dark;
+  }
+}
+
+@layer components {
+  /* Primary CTA button with glow effect */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+      px-6 py-3 rounded-xl
+      bg-primary text-white font-medium text-sm
+      transition-all duration-300 ease-out
+      hover:shadow-glow hover:scale-[1.02]
+      active:scale-[0.98]
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2;
+  }
+
+  .btn-primary-lg {
+    @apply btn-primary px-8 py-4 text-base rounded-2xl;
+  }
+
+  /* Secondary / ghost button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+      px-6 py-3 rounded-xl
+      border border-border bg-white text-foreground font-medium text-sm
+      transition-all duration-200
+      hover:border-primary/30 hover:bg-primary-light
+      active:scale-[0.98]
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2;
+  }
+
+  /* Accent / gold button */
+  .btn-accent {
+    @apply inline-flex items-center justify-center
+      px-6 py-3 rounded-xl
+      bg-accent text-ink font-semibold text-sm
+      transition-all duration-300 ease-out
+      hover:brightness-110 hover:scale-[1.02]
+      active:scale-[0.98];
+  }
+
+  /* Editorial card */
+  .card-editorial {
+    @apply bg-card rounded-xl border border-border shadow-editorial
+      transition-shadow duration-300
+      hover:shadow-editorial-lg;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-8 md:px-12 lg:px-16;
+  }
+
+  /* Category label — small uppercase prefix */
+  .category-label {
+    @apply text-sm font-bold uppercase tracking-[0.2em] text-glow;
+  }
+}
+
+@layer utilities {
+  /* Subtle glow gradient — very light, barely there */
+  .bg-glow-gradient {
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(192, 55, 147, 0.03) 0%,
+      transparent 60%
+    );
+  }
+
+  /* Plum gradient for hero/CTA sections */
+  .bg-plum-gradient {
+    background: linear-gradient(135deg, #2e0025 0%, #862369 50%, #c03793 100%);
+  }
+
+  /* Subtle border glow on hover */
+  .border-glow {
+    @apply border border-transparent transition-all duration-300;
+  }
+  .border-glow:hover {
+    border-color: rgba(192, 55, 147, 0.3);
+    box-shadow: 0 0 16px rgba(192, 55, 147, 0.1);
+  }
+}

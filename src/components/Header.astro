@@ -1,0 +1,159 @@
+---
+const navItems = [
+  { label: "Features", href: "/features" },
+  { label: "For Coaches", href: "/for-coaches" },
+  { label: "For Organisations", href: "/for-organisations" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Resources", href: "/resources" },
+  { label: "About", href: "/about" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border transition-shadow duration-300"
+>
+  <div class="section-container">
+    <nav class="flex items-center justify-between h-[72px]">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0" aria-label="Mentric home">
+        <img
+          src="/logo-full.webp"
+          alt="Mentric"
+          class="h-8 w-auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden lg:flex items-center gap-1">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  "px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+                  currentPath === item.href || currentPath.startsWith(item.href + "/")
+                    ? "text-primary bg-primary-light"
+                    : "text-foreground/80 hover:text-primary hover:bg-primary-light/50",
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="https://app.mentriccoaching.com/login" class="btn-secondary text-sm px-4 py-2"> Log In </a>
+        <a href="/contact" class="btn-primary text-sm"> Book a Demo </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-toggle"
+        class="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-primary-light/50 transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          id="menu-icon-open"
+          class="w-5 h-5 text-foreground"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          id="menu-icon-close"
+          class="w-5 h-5 text-foreground hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden border-t border-border bg-white"
+  >
+    <div class="section-container py-4 space-y-1">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200",
+              currentPath === item.href || currentPath.startsWith(item.href + "/")
+                ? "text-primary bg-primary-light"
+                : "text-foreground/80 hover:text-primary hover:bg-primary-light/50",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <hr class="my-3 border-border" />
+      <div class="flex flex-col gap-2 px-4 pb-2">
+        <a href="https://app.mentriccoaching.com/login" class="btn-secondary text-sm text-center"> Log In </a>
+        <a href="/contact" class="btn-primary text-sm text-center">
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  if (toggle && menu && iconOpen && iconClose) {
+    toggle.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+
+      menu.classList.toggle("hidden");
+      iconOpen.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+
+  // Add shadow on scroll
+  const header = document.getElementById("site-header");
+  if (header) {
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 8) {
+          header.classList.add("shadow-editorial");
+        } else {
+          header.classList.remove("shadow-editorial");
+        }
+      },
+      { passive: true }
+    );
+  }
+</script>

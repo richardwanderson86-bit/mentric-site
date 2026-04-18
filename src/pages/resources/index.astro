@@ -1,0 +1,118 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts, sorted by date (newest first)
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const categoryColours: Record<string, string> = {
+  blog: 'bg-primary/10 text-primary',
+  podcast: 'bg-accent/20 text-accent-dark',
+  events: 'bg-glow/10 text-glow',
+};
+
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+---
+
+<PageLayout title="Resources — Mentric Coaching Platform" description="Blogs, podcasts, and events for coaches and coaching organisations. Insights, ideas, and inspiration from the Mentric team.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-glow-gradient">
+    <div class="section-container py-10 md:py-14 text-center">
+      <p class="category-label mb-4">Resources</p>
+      <h1 class="max-w-4xl mx-auto">
+        Insights, ideas, and
+        <span class="text-primary">inspiration</span>
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl">
+        Blogs, podcasts, and events for coaches and organisations who believe
+        in the power of structured, measurable coaching.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resource Grid -->
+  <section class="bg-background">
+    <div class="section-container py-10 md:py-14">
+      {posts.length > 0 ? (
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <a href={`/resources/${post.slug}`} class="group card-editorial flex flex-col overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+              <!-- Colour bar -->
+              <div class="h-1 w-full bg-gradient-to-r from-primary via-glow to-accent" />
+              <div class="flex flex-col flex-1 p-6 md:p-8">
+                <!-- Category tag -->
+                <span class={`self-start inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest ${categoryColours[post.data.category] || categoryColours.blog}`}>
+                  {post.data.category}
+                </span>
+                <!-- Title -->
+                <h3 class="mt-4 text-lg md:text-xl font-semibold text-ink group-hover:text-primary transition-colors duration-200 leading-snug">
+                  {post.data.title}
+                </h3>
+                <!-- Date -->
+                <p class="mt-2 text-xs text-muted font-medium tracking-wide uppercase">
+                  {formatDate(post.data.date)}
+                </p>
+                <!-- Description -->
+                <p class="mt-3 text-sm text-muted leading-relaxed flex-1">
+                  {post.data.description}
+                </p>
+                <!-- Read more -->
+                <span class="mt-5 inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 gap-1 transition-all duration-200">
+                  Read more
+                  <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-muted text-lg">Resources coming soon. Check back shortly.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Coming Soon Note -->
+  <section class="bg-white">
+    <div class="section-container py-10 md:py-14 text-center">
+      <p class="category-label mb-4">More on the way</p>
+      <h2 class="max-w-3xl mx-auto text-2xl md:text-3xl">
+        We're building our resource library
+      </h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg">
+        Check back soon for coaching insights, podcast episodes, and upcoming
+        events. We're curating content that helps you grow your practice and
+        deliver measurable impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-plum-gradient">
+    <div class="section-container py-10 md:py-14 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary-200 mb-4">Contribute</p>
+      <h2 class="text-white max-w-3xl mx-auto">Want to contribute?</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-primary-200">
+        We're always looking for coaching professionals who want to share their
+        expertise. If you have an idea for a blog post, podcast episode, or
+        event, we'd love to hear from you.
+      </p>
+      <div class="mt-10">
+        <a href="/contact" class="btn-primary-lg bg-white text-primary hover:bg-primary-50 hover:shadow-glow-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

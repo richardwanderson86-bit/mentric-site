@@ -1,0 +1,490 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mentric",
+    "url": "https://www.mentriccoaching.com",
+    "logo": "https://www.mentriccoaching.com/logo.png",
+    "description": "Mentric is the coaching platform that helps coaches and organisations measure, track, and amplify the impact of coaching.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@mentriccoaching.com",
+      "contactType": "sales",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mentric",
+    "url": "https://www.mentriccoaching.com",
+  },
+];
+---
+
+<PageLayout title="Mentric — Where Coaching Becomes Measurable" description="Mentric brings structure, intelligence and insight to coaching practices. Run your practice, develop your coachees, and prove your impact." jsonLd={jsonLd}>
+
+  <!-- ============================================================
+       1. HERO SECTION
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-glow-gradient">
+    <div class="section-container py-10 md:py-14 text-center">
+      <p class="category-label mb-6">THE COACHING PLATFORM</p>
+      <h1 class="max-w-4xl mx-auto">
+        Where coaching becomes
+        <span class="text-primary">measurable</span>
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-muted">
+        Mentric brings structure, intelligence and insight to every coaching
+        engagement. From first session to final report, everything your practice
+        needs lives in one thoughtfully designed space.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/contact" class="btn-primary-lg">Book a Demo</a>
+        <a href="/features" class="btn-secondary px-8 py-4 text-base rounded-2xl">
+          Explore Features
+        </a>
+      </div>
+
+      <!-- Mock browser window -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="rounded-2xl border border-border bg-card shadow-editorial-lg overflow-hidden">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="ml-4 text-xs text-muted font-medium">app.mentric.io</span>
+          </div>
+          <div class="overflow-hidden">
+            <img src="/images/command-center.webp" alt="Mentric coaching command centre" class="w-full" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. PROBLEM SECTION
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-10 md:py-14">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <p class="category-label mb-4">THE CHALLENGE</p>
+        <h2>Coaching deserves better tools</h2>
+        <p class="mt-4 text-muted">
+          Most coaches piece together spreadsheets, messaging apps and scattered
+          notes. It works — until it doesn't.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Pain point 1 -->
+        <div class="card-editorial p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <h4 class="mb-3">Scattered administration</h4>
+          <p class="text-muted text-base">
+            Session notes in one place, scheduling in another, invoices somewhere
+            else. Important details slip through the cracks when your tools
+            don't talk to each other.
+          </p>
+        </div>
+
+        <!-- Pain point 2 -->
+        <div class="card-editorial p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+            </svg>
+          </div>
+          <h4 class="mb-3">No visibility into progress</h4>
+          <p class="text-muted text-base">
+            Without a clear way to track coachee development over time, it's
+            hard to know what's working. Growth feels anecdotal rather than
+            evidenced.
+          </p>
+        </div>
+
+        <!-- Pain point 3 -->
+        <div class="card-editorial p-8">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+          </div>
+          <h4 class="mb-3">Can't prove ROI</h4>
+          <p class="text-muted text-base">
+            Stakeholders and sponsors want evidence. When coaching outcomes
+            aren't measured, it's almost impossible to demonstrate the value
+            you know you're delivering.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. VALUE PROPOSITION — THREE PILLARS
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="section-container py-10 md:py-14">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="category-label mb-4">WHAT MENTRIC DOES</p>
+        <h2>One platform, three powerful pillars</h2>
+        <p class="mt-4 text-muted">
+          Everything you need to run a world-class coaching practice — from
+          day-to-day operations to long-term impact measurement.
+        </p>
+      </div>
+
+      <div class="space-y-14">
+        <!-- Pillar 1 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+            </div>
+            <h3 class="mb-4">Run your practice</h3>
+            <p class="text-muted mb-6">
+              Simplify the operational side of coaching so you can focus on what
+              matters — the conversations. Mentric handles scheduling, messaging
+              and administration in one clean workspace.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Session scheduling and calendar management</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">In-app messaging and session notes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Group coaching and cohort management</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Resource sharing and learning libraries</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-border shadow-editorial-lg overflow-hidden">
+            <img src="/images/programmes.webp" alt="Coaching programmes organised in a visual card grid" class="w-full rounded-lg" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1 rounded-2xl border border-border shadow-editorial-lg overflow-hidden">
+            <img src="/images/goals-pipeline.webp" alt="Goals pipeline view showing coachee development progress" class="w-full rounded-lg" loading="lazy" />
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+              </svg>
+            </div>
+            <h3 class="mb-4">Develop your coachees</h3>
+            <p class="text-muted mb-6">
+              Give every coachee a structured development journey with clear
+              goals, regular check-ins and rich feedback loops. Watch them grow
+              — and help them see it too.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Goals, milestones and development journeys</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Assessments and 360-degree feedback</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Reflective practice prompts and journals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Progress tracking with visual timelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+              </svg>
+            </div>
+            <h3 class="mb-4">Prove your impact</h3>
+            <p class="text-muted mb-6">
+              Turn coaching conversations into measurable outcomes. Mentric gives
+              you the data and insights to demonstrate value to sponsors, stakeholders
+              and yourself.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Analytics dashboards and outcome reporting</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">CPD hours tracking and accreditation support</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">AI-powered coaching insights and suggestions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Score trends across repeated assessments</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-border shadow-editorial-lg overflow-hidden">
+            <img src="/images/analytics.webp" alt="Analytics dashboard showing coaching outcome trends" class="w-full rounded-lg" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. FEATURE HIGHLIGHTS GRID
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-10 md:py-14">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <p class="category-label mb-4">FEATURES</p>
+        <h2>Built for the way coaches work</h2>
+        <p class="mt-4 text-muted">
+          Every feature has been designed with real coaching workflows in mind —
+          nothing bloated, nothing missing.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1: Sessions & Scheduling -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+            </svg>
+          </div>
+          <h4 class="mb-2">Sessions &amp; Scheduling</h4>
+          <p class="text-muted text-base mb-4">
+            Book, reschedule and track coaching sessions with integrated
+            calendar views and automated reminders.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <!-- Feature 2: Goals & Journeys -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" />
+            </svg>
+          </div>
+          <h4 class="mb-2">Goals &amp; Journeys</h4>
+          <p class="text-muted text-base mb-4">
+            Map out development journeys with structured goals, milestones
+            and progress checkpoints that coachees can own.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <!-- Feature 3: Assessments & 360 -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+            </svg>
+          </div>
+          <h4 class="mb-2">Assessments &amp; 360</h4>
+          <p class="text-muted text-base mb-4">
+            Run self-assessments, 360-degree feedback rounds and scheduled
+            evaluation cycles to capture growth over time.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <!-- Feature 4: Analytics & AI -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h4 class="mb-2">Analytics &amp; AI</h4>
+          <p class="text-muted text-base mb-4">
+            Surface trends, track outcomes and receive intelligent suggestions
+            powered by AI to sharpen your coaching approach.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <!-- Feature 5: Resources & Learning -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <h4 class="mb-2">Resources &amp; Learning</h4>
+          <p class="text-muted text-base mb-4">
+            Share articles, frameworks, worksheets and exercises with coachees
+            through a curated resource library.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <!-- Feature 6: CPD & Accreditation -->
+        <div class="card-editorial p-8 group">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+            </svg>
+          </div>
+          <h4 class="mb-2">CPD &amp; Accreditation</h4>
+          <p class="text-muted text-base mb-4">
+            Log coaching hours, reflective practice and development activities
+            to stay on track with accreditation requirements.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. AUDIENCE SPLIT
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="section-container py-10 md:py-14">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <p class="category-label mb-4">WHO IT'S FOR</p>
+        <h2>Designed for coaches and the organisations that invest in coaching</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- For Independent Coaches -->
+        <div class="card-editorial p-10 md:p-12 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary-50 to-transparent rounded-bl-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <h3 class="mb-4">For Independent Coaches</h3>
+            <p class="text-muted mb-6">
+              Whether you're building your practice or scaling an established one,
+              Mentric gives you the professional tools to manage coachees, track
+              development and present your impact with confidence.
+            </p>
+            <a href="/for-coaches" class="btn-primary">
+              Learn more &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- For Organisations -->
+        <div class="card-editorial p-10 md:p-12 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accent-light/40 to-transparent rounded-bl-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 3v18m4.5-18v18M15.75 3v18m4.5-18v18M5.25 6h1.5M5.25 9h1.5M5.25 12h1.5m6-6h1.5m-1.5 3h1.5m-1.5 3h1.5M17.25 6h1.5m-1.5 3h1.5m-1.5 3h1.5" />
+              </svg>
+            </div>
+            <h3 class="mb-4">For Organisations</h3>
+            <p class="text-muted mb-6">
+              Commission coaching programmes with full visibility. Assign coaches,
+              set objectives, monitor engagement and report on outcomes — all from
+              a single command centre.
+            </p>
+            <a href="/for-organisations" class="btn-primary">
+              Learn more &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. SOCIAL PROOF (PLACEHOLDER)
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-10 md:py-14">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="category-label mb-4">SOCIAL PROOF</p>
+        <h2 class="mb-6">Trusted by coaches and organisations</h2>
+        <p class="text-muted text-lg">
+          We're just getting started. Early adopters love what they see — and
+          we're working closely with coaches to build something truly special.
+        </p>
+
+        <!-- Placeholder for future testimonials -->
+        <div class="mt-12 grid sm:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-dashed border-border p-8">
+            <div class="w-10 h-10 rounded-full bg-border/50 mx-auto mb-4"></div>
+            <div class="h-3 rounded bg-border/40 w-3/4 mx-auto mb-2"></div>
+            <div class="h-3 rounded bg-border/30 w-1/2 mx-auto"></div>
+          </div>
+          <div class="rounded-xl border border-dashed border-border p-8">
+            <div class="w-10 h-10 rounded-full bg-border/50 mx-auto mb-4"></div>
+            <div class="h-3 rounded bg-border/40 w-3/4 mx-auto mb-2"></div>
+            <div class="h-3 rounded bg-border/30 w-1/2 mx-auto"></div>
+          </div>
+          <div class="rounded-xl border border-dashed border-border p-8">
+            <div class="w-10 h-10 rounded-full bg-border/50 mx-auto mb-4"></div>
+            <div class="h-3 rounded bg-border/40 w-3/4 mx-auto mb-2"></div>
+            <div class="h-3 rounded bg-border/30 w-1/2 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. CTA BANNER
+       ============================================================ -->
+  <section class="bg-plum-gradient text-white">
+    <div class="section-container py-10 md:py-14 text-center">
+      <h2 class="text-white mb-4">Ready to transform your coaching practice?</h2>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10">
+        Book a personalised demo and see how Mentric can bring structure,
+        insight and measurable impact to every coaching engagement.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-primary-dark font-semibold text-base transition-all duration-300 hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98]">
+        Book a Demo
+      </a>
+    </div>
+  </section>
+
+</PageLayout>
