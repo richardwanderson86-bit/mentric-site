@@ -1,0 +1,532 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mentric",
+    "url": "https://www.mentriccoaching.com",
+    "logo": "https://www.mentriccoaching.com/logo.png",
+    "description": "Mentric is the coaching platform that helps coaches and organisations measure, track, and amplify the impact of coaching.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@mentriccoaching.com",
+      "contactType": "sales",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mentric",
+    "url": "https://www.mentriccoaching.com",
+  },
+];
+---
+
+<PageLayout title="Mentric | Where Coaching Becomes Measurable" description="Mentric brings structure, intelligence and insight to coaching practices. Run your practice, develop your coachees, and prove your impact." jsonLd={jsonLd}>
+
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-animated">
+    <div class="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-primary/[0.03] blur-3xl animate-float"></div>
+    <div class="absolute bottom-10 right-[15%] w-48 h-48 rounded-full bg-accent/[0.04] blur-3xl animate-float-delayed"></div>
+
+    <div class="section-container relative py-20 md:py-32">
+      <div class="max-w-3xl">
+        <p class="category-label mb-6">THE COACHING PLATFORM</p>
+        <h1>
+          Where coaching becomes
+          <span class="text-primary">measurable</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-muted max-w-2xl">
+          Mentric brings structure, intelligence and insight to every coaching
+          engagement. From first session to final report, everything your practice
+          needs lives in one thoughtfully designed space.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-start gap-4">
+          <a href="/contact" class="btn-primary-lg">Book a Demo</a>
+          <a href="/features" class="btn-secondary px-8 py-4 text-base rounded-2xl">
+            Explore Features
+          </a>
+        </div>
+      </div>
+
+      <!-- Product preview -->
+      <div class="mt-16 max-w-5xl" data-reveal>
+        <div class="rounded-2xl border border-border bg-card shadow-editorial-lg overflow-hidden">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="w-3 h-3 rounded-full bg-border"></span>
+            <span class="ml-4 text-xs text-muted font-medium">app.mentric.io</span>
+          </div>
+          <!-- Video if available, falls back to image -->
+          <div class="overflow-hidden">
+            <video class="w-full" autoplay loop muted playsinline>
+              <source src="/videos/command-center.webm" type="video/webm" />
+              <!-- Fallback image if video not available -->
+            </video>
+            <noscript>
+              <img src="/images/command-center.webp" alt="Mentric coaching command centre" class="w-full" />
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. TRUST STRIP
+       ============================================================ -->
+  <section class="bg-white border-b border-border">
+    <div class="section-container py-8">
+      <div class="flex flex-wrap items-center justify-start gap-x-10 gap-y-3 text-sm text-muted" data-reveal>
+        <span class="flex items-center gap-2 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Purpose-built for coaching
+        </span>
+        <span class="flex items-center gap-2 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          GDPR compliant
+        </span>
+        <span class="flex items-center gap-2 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          WCAG AA accessible
+        </span>
+        <span class="flex items-center gap-2 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          ICF &amp; EMCC aligned
+        </span>
+        <span class="flex items-center gap-2 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          AI-powered insights
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. PROBLEM
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-12" data-reveal>
+        <p class="category-label mb-4">THE CHALLENGE</p>
+        <h2>Coaching deserves better tools</h2>
+        <p class="mt-4 text-muted">
+          Most coaches piece together spreadsheets, messaging apps and scattered
+          notes. It works until it doesn't.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" data-reveal-stagger>
+        <div class="card-editorial p-8">
+          <span class="text-5xl font-black text-primary/10 leading-none">01</span>
+          <h4 class="mt-4 mb-3">Scattered administration</h4>
+          <p class="text-muted text-base">
+            Session notes in one place, scheduling in another, invoices somewhere
+            else. Important details slip through the cracks.
+          </p>
+        </div>
+
+        <div class="card-editorial p-8">
+          <span class="text-5xl font-black text-primary/10 leading-none">02</span>
+          <h4 class="mt-4 mb-3">No visibility into progress</h4>
+          <p class="text-muted text-base">
+            Without a clear way to track development over time, growth feels
+            anecdotal rather than evidenced.
+          </p>
+        </div>
+
+        <div class="card-editorial p-8">
+          <span class="text-5xl font-black text-primary/10 leading-none">03</span>
+          <h4 class="mt-4 mb-3">Can't prove ROI</h4>
+          <p class="text-muted text-base">
+            Stakeholders want evidence. When outcomes aren't measured, it's
+            impossible to demonstrate the value you deliver.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. HOW IT WORKS
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="category-label mb-4">HOW IT WORKS</p>
+        <h2>Up and running in three steps</h2>
+        <p class="mt-4 text-muted">
+          No lengthy onboarding, no complex setup, just a platform that
+          works the way coaches think.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10" data-reveal-stagger>
+        <div>
+          <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-black flex items-center justify-center mb-5">
+            1
+          </div>
+          <h4 class="mb-3">Set up your practice</h4>
+          <p class="text-muted text-base">
+            Add your branding, invite your coachees, and configure your coaching
+            methodology. Mentric adapts to how you work.
+          </p>
+        </div>
+
+        <div>
+          <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-black flex items-center justify-center mb-5">
+            2
+          </div>
+          <h4 class="mb-3">Run your sessions</h4>
+          <p class="text-muted text-base">
+            Schedule sessions, set goals, assign assessments, and share
+            resources, all from one clean workspace.
+          </p>
+        </div>
+
+        <div>
+          <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-black flex items-center justify-center mb-5">
+            3
+          </div>
+          <h4 class="mb-3">Prove your impact</h4>
+          <p class="text-muted text-base">
+            Track progress, measure outcomes, and generate reports that
+            demonstrate the real value of your coaching.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. THREE PILLARS - with contained screenshots/videos
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-16" data-reveal>
+        <p class="category-label mb-4">WHAT MENTRIC DOES</p>
+        <h2>One platform, three powerful pillars</h2>
+        <p class="mt-4 text-muted">
+          Everything you need to run a world-class coaching practice, from
+          day-to-day operations to long-term impact measurement.
+        </p>
+      </div>
+
+      <div class="space-y-24">
+        <!-- Pillar 1 -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" data-reveal>
+          <div>
+            <p class="category-label mb-3">Operations</p>
+            <h3 class="mb-4">Run your practice</h3>
+            <p class="text-muted mb-6">
+              Simplify the operational side of coaching so you can focus on what
+              matters: the conversations. Mentric handles scheduling, messaging
+              and administration in one clean workspace.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Session scheduling and calendar management</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">In-app messaging and session notes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Group coaching and cohort management</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Resource sharing and learning libraries</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-border shadow-editorial-lg overflow-hidden bg-background p-4">
+            <img src="/images/programmes.webp" alt="Coaching programmes" class="product-screenshot" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" data-reveal>
+          <div class="order-2 lg:order-1 rounded-2xl border border-border shadow-editorial-lg overflow-hidden bg-background p-4">
+            <img src="/images/goals-pipeline.webp" alt="Goals pipeline" class="product-screenshot" loading="lazy" />
+          </div>
+          <div class="order-1 lg:order-2">
+            <p class="category-label mb-3">Development</p>
+            <h3 class="mb-4">Develop your coachees</h3>
+            <p class="text-muted mb-6">
+              Give every coachee a structured development journey with clear
+              goals, regular check-ins and rich feedback loops. Watch them grow
+              and help them see it too.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Goals, milestones and development journeys</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Assessments and 360-degree feedback</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Reflective practice prompts and journals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-accent-dark flex-shrink-0"></span>
+                <span class="text-foreground">Progress tracking with visual timelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" data-reveal>
+          <div>
+            <p class="category-label mb-3">Impact</p>
+            <h3 class="mb-4">Prove your impact</h3>
+            <p class="text-muted mb-6">
+              Turn coaching conversations into measurable outcomes. Mentric gives
+              you the data and insights to demonstrate value to sponsors, stakeholders
+              and yourself.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Analytics dashboards and outcome reporting</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">CPD hours tracking and accreditation support</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">AI-powered coaching insights and suggestions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                <span class="text-foreground">Score trends across repeated assessments</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-border shadow-editorial-lg overflow-hidden bg-background p-4">
+            <img src="/images/analytics.webp" alt="Analytics dashboard" class="product-screenshot" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. FEATURES GRID
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-12" data-reveal>
+        <p class="category-label mb-4">FEATURES</p>
+        <h2>Built for the way coaches work</h2>
+        <p class="mt-4 text-muted">
+          Every feature has been designed with real coaching workflows in mind.
+          Nothing bloated, nothing missing.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-reveal-stagger>
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Sessions</span>
+          <h4 class="text-lg mb-2">Sessions &amp; Scheduling</h4>
+          <p class="text-muted text-base mb-4">
+            Book, reschedule and track coaching sessions with integrated
+            calendar views and automated reminders.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Progress</span>
+          <h4 class="text-lg mb-2">Goals &amp; Journeys</h4>
+          <p class="text-muted text-base mb-4">
+            Map out development journeys with structured goals, milestones
+            and progress checkpoints that coachees can own.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Measurement</span>
+          <h4 class="text-lg mb-2">Assessments &amp; 360</h4>
+          <p class="text-muted text-base mb-4">
+            Run self-assessments, 360-degree feedback rounds and scheduled
+            evaluation cycles to capture growth over time.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Intelligence</span>
+          <h4 class="text-lg mb-2">Analytics &amp; AI</h4>
+          <p class="text-muted text-base mb-4">
+            Surface trends, track outcomes and receive intelligent suggestions
+            powered by AI to sharpen your coaching approach.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Knowledge</span>
+          <h4 class="text-lg mb-2">Resources &amp; Learning</h4>
+          <p class="text-muted text-base mb-4">
+            Share articles, frameworks, worksheets and exercises with coachees
+            through a curated resource library.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+
+        <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Professional</span>
+          <h4 class="text-lg mb-2">CPD &amp; Accreditation</h4>
+          <p class="text-muted text-base mb-4">
+            Log coaching hours, reflective practice and development activities
+            to stay on track with accreditation requirements.
+          </p>
+          <a href="/features" class="text-sm font-medium text-primary hover:text-glow transition-colors">
+            Learn more &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. AUDIENCE SPLIT
+       ============================================================ -->
+  <section class="bg-background">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-12" data-reveal>
+        <p class="category-label mb-4">WHO IT'S FOR</p>
+        <h2>Designed for coaches and the organisations that invest in coaching</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8" data-reveal-stagger>
+        <div class="card-editorial p-10 md:p-12 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary-50 to-transparent rounded-bl-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <p class="category-label mb-4">For Coaches</p>
+            <h3 class="mb-4">For Independent Coaches</h3>
+            <p class="text-muted mb-6">
+              Whether you're building your practice or scaling an established one,
+              Mentric gives you the professional tools to manage coachees, track
+              development and present your impact with confidence.
+            </p>
+            <a href="/for-coaches" class="btn-primary">
+              Learn more &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="card-editorial p-10 md:p-12 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accent-light/40 to-transparent rounded-bl-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <p class="category-label mb-4">For Organisations</p>
+            <h3 class="mb-4">For Organisations</h3>
+            <p class="text-muted mb-6">
+              Commission coaching programmes with full visibility. Assign coaches,
+              set objectives, monitor engagement and report on outcomes, all from
+              a single command centre.
+            </p>
+            <a href="/for-organisations" class="btn-primary">
+              Learn more &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. CREDIBILITY
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="section-container py-20 md:py-28">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="category-label mb-4">WHY MENTRIC</p>
+        <h2>Built differently</h2>
+        <p class="text-muted text-lg mt-4">
+          We're not another generic tool adapted for coaching. Mentric was
+          designed from the ground up by people who understand the craft.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" data-reveal-stagger>
+        <div>
+          <p class="text-5xl font-black text-primary mb-2">100%</p>
+          <p class="text-sm font-bold text-ink mb-1">Coaching-first</p>
+          <p class="text-sm text-muted">Every feature built for coaches, not adapted from HR tools</p>
+        </div>
+        <div>
+          <p class="text-5xl font-black text-primary mb-2">8+</p>
+          <p class="text-sm font-bold text-ink mb-1">Assessment types</p>
+          <p class="text-sm text-muted">Scale, matrix, ranking, 360 feedback, and more</p>
+        </div>
+        <div>
+          <p class="text-5xl font-black text-primary mb-2">AA</p>
+          <p class="text-sm font-bold text-ink mb-1">WCAG accessible</p>
+          <p class="text-sm text-muted">Inclusive design with dyslexia fonts, high contrast, and more</p>
+        </div>
+        <div>
+          <p class="text-5xl font-black text-primary mb-2">AI</p>
+          <p class="text-sm font-bold text-ink mb-1">Powered insights</p>
+          <p class="text-sm text-muted">Ask questions in plain English, get data-backed answers</p>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mt-16" data-reveal>
+        <blockquote class="border-l-2 border-primary/30 pl-8">
+          <p class="text-xl md:text-2xl font-light italic leading-relaxed text-ink">
+            "Coaching should be structured, measurable, and beautiful. It should
+            feel as professional and considered as the work coaches do every day."
+          </p>
+          <footer class="mt-4 text-sm text-muted">
+            - The Mentric team
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. CTA BANNER
+       ============================================================ -->
+  <section class="bg-plum-gradient text-white">
+    <div class="section-container py-20 md:py-28" data-reveal>
+      <div class="max-w-2xl">
+        <p class="category-label mb-4 text-primary-200/60 before:bg-accent/40">READY?</p>
+        <h2 class="text-white mb-4">Transform your coaching practice</h2>
+        <p class="text-white/70 text-lg max-w-xl mb-10">
+          Book a personalised demo and see how Mentric can bring structure,
+          insight and measurable impact to every coaching engagement.
+        </p>
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-primary-dark font-semibold text-base transition-all duration-300 hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98]">
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

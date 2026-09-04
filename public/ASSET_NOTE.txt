@@ -1,0 +1,9 @@
+Copy the following logo assets from the parent app's public/ directory into this folder:
+
+  - logo-full.webp       (full Mentric wordmark)
+  - favicon.svg          (SVG favicon)
+  - favicon-32x32.png    (PNG favicon)
+  - apple-touch-icon.png (iOS home screen icon)
+  - og-image.png         (Open Graph social preview image — create if missing)
+
+Source directory: ../public/

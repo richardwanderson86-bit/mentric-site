@@ -1,0 +1,241 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+---
+
+<PageLayout title="Contact | Mentric" description="Get in touch with the Mentric team. Book a demo, ask a question, or find out how Mentric can support your coaching practice.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-hero-animated">
+    <div class="section-container relative py-16 md:py-24 text-center">
+      <p class="category-label mb-4">Get in Touch</p>
+      <h1 class="max-w-3xl mx-auto">
+        Let's talk about your <span class="text-primary">coaching practice</span>
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl">
+        Whether you're an independent coach or managing coaching across an organisation,
+        we'd love to show you what Mentric can do.
+      </p>
+    </div>
+  </section>
+
+  <!-- Two-column layout -->
+  <section class="py-16 md:py-24">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+
+        <!-- Left column - Contact Form -->
+        <div class="lg:col-span-3" data-reveal>
+          <form
+            action="https://formspree.io/f/xvzzorrg"
+            method="POST"
+            class="space-y-6"
+          >
+            <!-- Name row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-ink mb-2">
+                  First name <span class="text-primary">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  required
+                  class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                    transition-all duration-200
+                    focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                  placeholder="Jane"
+                />
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-ink mb-2">
+                  Last name <span class="text-primary">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  required
+                  class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                    transition-all duration-200
+                    focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                  placeholder="Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-ink mb-2">
+                Email <span class="text-primary">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                placeholder="jane@example.com"
+              />
+            </div>
+
+            <!-- Organisation -->
+            <div>
+              <label for="organisation" class="block text-sm font-medium text-ink mb-2">
+                Organisation
+              </label>
+              <input
+                type="text"
+                id="organisation"
+                name="organisation"
+                class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                placeholder="Your company or practice name"
+              />
+            </div>
+
+            <!-- Role -->
+            <div>
+              <label for="role" class="block text-sm font-medium text-ink mb-2">
+                Role
+              </label>
+              <select
+                id="role"
+                name="role"
+                class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink
+                  transition-all duration-200 appearance-none
+                  focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+              >
+                <option value="" disabled selected>Select your role</option>
+                <option value="independent-coach">Independent Coach</option>
+                <option value="coaching-practice-owner">Coaching Practice Owner</option>
+                <option value="hr-ld-manager">HR/L&amp;D Manager</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-ink mb-2">
+                Message <span class="text-primary">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                  transition-all duration-200 resize-y
+                  focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                placeholder="Tell us about your coaching practice and how we can help..."
+              ></textarea>
+            </div>
+
+            <!-- How did you hear about us? -->
+            <div>
+              <label for="referral" class="block text-sm font-medium text-ink mb-2">
+                How did you hear about us?
+              </label>
+              <input
+                type="text"
+                id="referral"
+                name="referral"
+                class="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/50
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50"
+                placeholder="e.g. Google, LinkedIn, a colleague..."
+              />
+            </div>
+
+            <!-- Submit -->
+            <div>
+              <button
+                type="submit"
+                class="btn-primary w-full sm:w-auto px-10 py-3.5 text-base"
+              >
+                Send Message
+              </button>
+            </div>
+
+            <!-- GDPR note -->
+            <p class="text-xs text-muted leading-relaxed">
+              By submitting this form, you agree to our
+              <a href="/privacy" class="underline hover:text-primary">Privacy Policy</a>.
+              We'll only use your details to respond to your enquiry.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right column - Info cards -->
+        <div class="lg:col-span-2 space-y-6" data-reveal-stagger>
+
+          <!-- Get in touch card -->
+          <div class="card-editorial p-6 md:p-8">
+            <h3 class="text-lg font-semibold text-ink mb-4">Get in touch</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
+                <a href="mailto:hello@mentriccoaching.com" class="text-foreground hover:text-primary">
+                  hello@mentriccoaching.com
+                </a>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
+                <a href="https://www.mentriccoaching.com" class="text-foreground hover:text-primary">
+                  www.mentriccoaching.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What to expect card -->
+          <div class="card-editorial p-6 md:p-8">
+            <h3 class="text-lg font-semibold text-ink mb-4">What to expect</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>We'll get back to you within 24 hours</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>We'll arrange a personalised demo of the platform</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>No pressure, no hard sell, just an honest conversation</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Why Mentric card -->
+          <div class="card-editorial p-6 md:p-8">
+            <h3 class="text-lg font-semibold text-ink mb-4">Why coaches choose Mentric</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>Purpose-built for coaching, not adapted from HR tools</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>Beautiful, intuitive design that reflects your professionalism</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>Measurable outcomes you can share with stakeholders</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-foreground">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+                <span>AI-powered insights that save hours every week</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
