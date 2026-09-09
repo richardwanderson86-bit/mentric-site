@@ -62,15 +62,12 @@ const jsonLd = [
             <span class="w-3 h-3 rounded-full bg-border"></span>
             <span class="ml-4 text-xs text-muted font-medium">app.mentric.io</span>
           </div>
-          <!-- Video if available, falls back to image -->
+          <!-- Video with image fallback for mobile/Safari -->
           <div class="overflow-hidden">
-            <video class="w-full" autoplay loop muted playsinline>
+            <video class="w-full hidden md:block" autoplay loop muted playsinline>
               <source src="/videos/command-center.webm" type="video/webm" />
-              <!-- Fallback image if video not available -->
             </video>
-            <noscript>
-              <img src="/images/command-center.webp" alt="Mentric coaching command centre" class="w-full" />
-            </noscript>
+            <img src="/images/command-center.webp" alt="Mentric coaching command centre" class="w-full md:hidden" loading="lazy" />
           </div>
         </div>
       </div>
