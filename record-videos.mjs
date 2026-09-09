@@ -226,6 +226,18 @@ async function run() {
   await initPage.click('button[type="submit"]');
   await initPage.waitForURL((url) => !url.pathname.includes('/login'), { timeout: 15000 });
   await initPage.waitForTimeout(3000);
+
+  // Accept the privacy policy gate if it appears
+  const privacyCheckbox = initPage.locator('#privacy-agree');
+  if (await privacyCheckbox.isVisible({ timeout: 3000 }).catch(() => false)) {
+    console.log('  Accepting privacy policy...');
+    await privacyCheckbox.click();
+    await initPage.waitForTimeout(500);
+    const acceptBtn = initPage.locator('button:has-text("Accept & Continue")');
+    await acceptBtn.click();
+    await initPage.waitForTimeout(3000);
+  }
+
   await dismissOverlays(initPage);
   await initPage.waitForTimeout(2000);
 
