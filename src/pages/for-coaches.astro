@@ -4,7 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 
 <PageLayout
   title="Mentric for Independent Coaches | Elevate Your Coaching Practice"
-  description="Mentric gives independent coaches the tools to run a professional, structured practice without the admin burden. Assessments, session management, CPD tracking, and more."
+  description="Mentric gives independent coaches the tools to run a professional, structured practice without the admin burden. Session management, goal tracking, analytics, CPD tracking, and more."
 >
   <!-- Hero -->
   <section class="relative overflow-hidden bg-hero-animated">
@@ -86,7 +86,7 @@ import PageLayout from "@layouts/PageLayout.astro";
           <p class="category-label mb-3">Your hub</p>
           <h3 class="mb-4">One place for your entire practice</h3>
           <p class="mb-6">
-            All your coachees, sessions, goals, and assessments live in a single,
+            All your coachees, sessions, goals, and progress data live in a single,
             beautifully organised dashboard. No more switching between apps or
             losing track of where things are.
           </p>
@@ -97,7 +97,7 @@ import PageLayout from "@layouts/PageLayout.astro";
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Session history, goals, and assessments in one view</span>
+              <span class="text-muted">Session history, goals, and feedback in one view</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
@@ -110,67 +110,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
       </div>
 
-      <!-- Feature 2 -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
-        <div class="order-2 lg:order-1 overflow-hidden rounded-xl">
-          <img src="/images/goals-pipeline.webp" alt="Goals pipeline view showing coachee development stages from Awareness through to Mastery with milestone tracking" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
-        </div>
-        <div class="order-1 lg:order-2">
-          <p class="category-label mb-3">Coaching framework</p>
-          <h3 class="mb-4">Structured coaching journeys</h3>
-          <p class="mb-6">
-            Guide each coachee through meaningful stages of development, from
-            Awareness through to Mastery. Set goals with clear milestones and
-            let AI suggest focus areas based on assessment results.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Stage-based progression (Awareness, Development, Mastery)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Goals with milestones and evidence tracking</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">AI-powered goal suggestions from assessment data</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
-        <div>
-          <p class="category-label mb-3">Measure growth</p>
-          <h3 class="mb-4">Professional assessments</h3>
-          <p class="mb-6">
-            Build custom assessments tailored to your methodology, or start
-            with ready-made templates. Run 360-degree feedback with full
-            respondent management and track how scores improve over time.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Custom assessment builder with flexible question types</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">360-degree feedback with respondent tracking</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Score trends and improvement analytics</span>
-            </li>
-          </ul>
-        </div>
-        <div class="overflow-hidden rounded-xl">
-          <img src="/images/assessments.webp" alt="Professional assessments page showing custom assessment builder with 360-degree feedback and score tracking" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
-        </div>
-      </div>
-
-      <!-- Feature 4 -->
+      <!-- Feature 2: Sessions -->
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
         <div class="order-2 lg:order-1 overflow-hidden rounded-xl">
           <img src="/images/sessions.webp" alt="Session management view with scheduled coaching sessions, AI-powered summaries, and follow-up actions" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
@@ -201,7 +141,67 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
       </div>
 
-      <!-- Feature 5 -->
+      <!-- Feature 3: Journeys -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
+        <div>
+          <p class="category-label mb-3">Coaching framework</p>
+          <h3 class="mb-4">Structured coaching journeys</h3>
+          <p class="mb-6">
+            Guide each coachee through meaningful stages of development, from
+            Awareness through to Mastery. Set goals with clear milestones and
+            let AI suggest focus areas based on progress data.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">Stage-based progression (Awareness, Development, Mastery)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">Goals with milestones and evidence tracking</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">AI-powered goal suggestions based on coaching data</span>
+            </li>
+          </ul>
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/goals-pipeline.webp" alt="Goals pipeline view showing coachee development stages from Awareness through to Mastery with milestone tracking" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Feature 4: Analytics -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
+        <div class="order-2 lg:order-1 overflow-hidden rounded-xl">
+          <img src="/images/analytics.webp" alt="Analytics dashboard with coaching activity metrics, coachee progress trends, and engagement analytics" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="category-label mb-3">Stay informed</p>
+          <h3 class="mb-4">Insights at a glance</h3>
+          <p class="mb-6">
+            Your dashboard gives you a clear picture of your coaching activity,
+            coachee progress, and engagement trends. Ask questions about your
+            practice and let AI surface the answers.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">Activity dashboard with key metrics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">Coachee progress and engagement analytics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
+              <span class="text-muted">AI-powered queries about your practice</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 5: Resources -->
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
         <div>
           <p class="category-label mb-3">Knowledge sharing</p>
@@ -231,7 +231,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
       </div>
 
-      <!-- Feature 6 -->
+      <!-- Feature 6: CPD -->
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20" data-reveal>
         <div class="order-2 lg:order-1 overflow-hidden rounded-xl">
           <img src="/images/cpd.webp" alt="CPD tracking dashboard showing coaching hours, reflective practice journal, and accreditation evidence" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
@@ -261,33 +261,33 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
       </div>
 
-      <!-- Feature 7 -->
+      <!-- Feature 7: Feedback & Measurement -->
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" data-reveal>
         <div>
-          <p class="category-label mb-3">Stay informed</p>
-          <h3 class="mb-4">Insights at a glance</h3>
+          <p class="category-label mb-3">Measure growth</p>
+          <h3 class="mb-4">Feedback and evaluation tools</h3>
           <p class="mb-6">
-            Your dashboard gives you a clear picture of your coaching activity,
-            coachee progress, and engagement trends. Ask questions about your
-            practice and let AI surface the answers.
+            Capture structured feedback from coachees, their managers, and
+            peers. Track how scores change over time and use the data to
+            inform your coaching conversations.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Activity dashboard with key metrics</span>
+              <span class="text-muted">Flexible evaluation templates with multiple question types</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">Coachee progress and engagement analytics</span>
+              <span class="text-muted">Multi-rater feedback from managers and peers</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
-              <span class="text-muted">AI-powered queries about your practice</span>
+              <span class="text-muted">Score trends and improvement tracking over time</span>
             </li>
           </ul>
         </div>
         <div class="overflow-hidden rounded-xl">
-          <img src="/images/analytics.webp" alt="Analytics dashboard with coaching activity metrics, coachee progress trends, and engagement analytics" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
+          <img src="/images/assessments.webp" alt="Feedback and evaluation tools showing multi-rater feedback and score tracking" class="w-full rounded-xl shadow-editorial-lg border border-border" loading="lazy" />
         </div>
       </div>
     </div>
@@ -323,8 +323,8 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
         <div class="card-editorial p-6 text-center">
           <span class="text-2xl font-bold text-primary/20 mb-3 block">04</span>
-          <h4 class="text-base font-semibold mb-1">Assessments</h4>
-          <p class="text-sm">Complete self and 360 assessments with ease</p>
+          <h4 class="text-base font-semibold mb-1">Feedback</h4>
+          <p class="text-sm">Complete evaluations and provide structured feedback</p>
         </div>
       </div>
     </div>
