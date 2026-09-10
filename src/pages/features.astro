@@ -2,7 +2,7 @@
 import PageLayout from '@layouts/PageLayout.astro';
 ---
 
-<PageLayout title="Features | Mentric Coaching Platform" description="Explore the full Mentric feature set: session management, goals, assessments, 360 feedback, analytics, CPD tracking, AI assistant, and more.">
+<PageLayout title="Features | Mentric Coaching Platform" description="Explore the full Mentric feature set: session management, goals, analytics, CPD tracking, messaging, AI assistant, and more.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden bg-hero-animated">
@@ -14,7 +14,7 @@ import PageLayout from '@layouts/PageLayout.astro';
         <span class="text-primary">world-class coaching practice</span>
       </h1>
       <p class="mt-6 max-w-2xl text-lg md:text-xl">
-        From session scheduling to 360 feedback, CPD tracking to AI-powered insights,
+        From session scheduling to goal tracking, CPD management to AI-powered insights,
         Mentric brings every tool a modern coaching practice needs into one
         beautifully designed platform.
       </p>
@@ -122,8 +122,8 @@ import PageLayout from '@layouts/PageLayout.astro';
         <div class="border-l-2 border-primary/30 pl-5 py-1">
           <h4 class="text-lg font-semibold text-ink">AI goal recommendations</h4>
           <p class="mt-1 text-sm text-muted">
-            Let Mentric's AI suggest personalised goals based on assessment
-            results, saving time and surfacing blindspots.
+            Let Mentric's AI suggest personalised goals based on coaching
+            data, saving time and surfacing blindspots.
           </p>
         </div>
         <div class="border-l-2 border-primary/30 pl-5 py-1">
@@ -144,72 +144,8 @@ import PageLayout from '@layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- Assessments & 360 Feedback -->
-  <section class="bg-white">
-    <div class="section-container py-16 md:py-24">
-      <div data-reveal>
-        <p class="category-label mb-3">Measurement</p>
-        <h2 class="max-w-3xl">Assessments &amp; 360 Feedback</h2>
-        <p class="mt-4 max-w-2xl text-lg">
-          Build bespoke assessments, gather multi-rater feedback, and track scores
-          over time to measure genuine behavioural change.
-        </p>
-      </div>
-      <div class="mt-10" data-reveal>
-        <video class="w-full rounded-xl shadow-editorial-lg border border-border hidden md:block" autoplay loop muted playsinline>
-          <source src="/videos/assessments.webm" type="video/webm" />
-        </video>
-        <img src="/images/assessments.webp" alt="Assessments" class="w-full rounded-xl shadow-editorial-lg border border-border md:hidden" loading="lazy" />
-      </div>
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Custom assessment templates</h4>
-          <p class="mt-1 text-sm text-muted">
-            Build assessments with 8+ question types: scale, multiple choice,
-            rating, ranking, matrix Likert, free text, true/false, and more.
-          </p>
-        </div>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">360-degree feedback</h4>
-          <p class="mt-1 text-sm text-muted">
-            Gather multi-rater feedback from managers, peers, and reports with
-            full respondent tracking and anonymity controls.
-          </p>
-        </div>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">AI question generation</h4>
-          <p class="mt-1 text-sm text-muted">
-            Generate targeted assessment questions with AI, focused on specific
-            competencies or development areas.
-          </p>
-        </div>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Score trends</h4>
-          <p class="mt-1 text-sm text-muted">
-            Track scores across repeated assessments to visualise growth and
-            identify areas that need attention.
-          </p>
-        </div>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Competency frameworks</h4>
-          <p class="mt-1 text-sm text-muted">
-            Integrate your organisation's competency framework so assessment
-            results map directly to the behaviours that matter.
-          </p>
-        </div>
-        <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Scheduled &amp; recurring</h4>
-          <p class="mt-1 text-sm text-muted">
-            Set assessments to repeat on a schedule (monthly, quarterly, or
-            custom) so measurement happens consistently.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Resources & Learning -->
-  <section class="bg-background">
+  <section class="bg-white">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Knowledge</p>
@@ -256,7 +192,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- Analytics & Insights -->
-  <section class="bg-white">
+  <section class="bg-background">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Intelligence</p>
@@ -295,10 +231,10 @@ import PageLayout from '@layouts/PageLayout.astro';
           </p>
         </div>
         <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Assessment &amp; 360 comparisons</h4>
+          <h4 class="text-lg font-semibold text-ink">Goal &amp; confidence tracking</h4>
           <p class="mt-1 text-sm text-muted">
-            Compare assessment score trends over time and view 360 feedback
-            side-by-side to spot real behavioural shifts.
+            Track goal progress and confidence scores over time to spot
+            genuine behavioural shifts and development patterns.
           </p>
         </div>
         <div class="border-l-2 border-primary/30 pl-5 py-1">
@@ -320,7 +256,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- CPD & Accreditation -->
-  <section class="bg-background">
+  <section class="bg-white">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Professional Development</p>
@@ -375,7 +311,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- Messaging & Collaboration -->
-  <section class="bg-white">
+  <section class="bg-background">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Communication</p>
@@ -422,7 +358,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- Group Coaching -->
-  <section class="bg-background">
+  <section class="bg-white">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Groups</p>
@@ -480,7 +416,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- AI Assistant -->
-  <section class="bg-white">
+  <section class="bg-background">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Artificial Intelligence</p>
@@ -508,8 +444,8 @@ import PageLayout from '@layouts/PageLayout.astro';
         <div class="border-l-2 border-primary/30 pl-5 py-1">
           <h4 class="text-lg font-semibold text-ink">Goal suggestions</h4>
           <p class="mt-1 text-sm text-muted">
-            AI analyses assessment results and recommends personalised goals
-            , giving you a head start on development planning.
+            AI analyses coaching data and recommends personalised goals,
+            giving you a head start on development planning.
           </p>
         </div>
         <div class="border-l-2 border-primary/30 pl-5 py-1">
@@ -527,10 +463,10 @@ import PageLayout from '@layouts/PageLayout.astro';
           </p>
         </div>
         <div class="border-l-2 border-primary/30 pl-5 py-1">
-          <h4 class="text-lg font-semibold text-ink">Assessment question generation</h4>
+          <h4 class="text-lg font-semibold text-ink">Feedback question generation</h4>
           <p class="mt-1 text-sm text-muted">
-            Generate assessment questions targeted at specific competencies,
-            saving hours of manual assessment design.
+            Generate targeted feedback questions with AI, focused on specific
+            competencies or development areas.
           </p>
         </div>
       </div>
@@ -538,7 +474,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- Branding & White-Label -->
-  <section class="bg-background">
+  <section class="bg-white">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Customisation</p>
@@ -585,7 +521,7 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
   <!-- Accessibility -->
-  <section class="bg-white">
+  <section class="bg-background">
     <div class="section-container py-16 md:py-24">
       <div data-reveal>
         <p class="category-label mb-3">Inclusive Design</p>

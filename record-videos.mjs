@@ -92,101 +92,22 @@ const recordings = [
     },
   },
   {
-    name: 'assessments',
-    label: 'Assessments — Template Builder',
-    steps: async (page) => {
-      await page.goto(`${BASE_URL}/assessments/new`, { waitUntil: 'networkidle' });
-      await dismissOverlays(page);
-      await page.waitForTimeout(3000);
-
-      // Type a template name — slow, deliberate typing
-      const nameInput = page.locator('input[placeholder*="e.g."], input[placeholder*="name"], input[placeholder*="title"]').first();
-      if (await nameInput.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await nameInput.click();
-        await page.waitForTimeout(500);
-        await page.keyboard.type('Leadership Effectiveness Assessment', { delay: 60 });
-        await page.waitForTimeout(2000);
-      }
-
-      // Scroll down to see the purpose cards
-      await smoothScroll(page, 300, 3000);
-      await page.waitForTimeout(2000);
-
-      // Click the 'Development' purpose card
-      const devCard = page.locator('text=Development').first();
-      if (await devCard.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await devCard.click();
-        await page.waitForTimeout(2500);
-      }
-
-      // Scroll to show the selection
-      await smoothScroll(page, 200, 2000);
-      await page.waitForTimeout(2000);
-
-      // Click Next to go to Instructions step
-      const nextBtn = page.locator('button:has-text("Next")').first();
-      if (await nextBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await nextBtn.click();
-        await page.waitForTimeout(3500);
-      }
-
-      // Scroll the instructions step
-      await smoothScroll(page, 250, 2500);
-      await page.waitForTimeout(2000);
-
-      // Click Next to Questions step
-      const nextBtn2 = page.locator('button:has-text("Next")').first();
-      if (await nextBtn2.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await nextBtn2.click();
-        await page.waitForTimeout(3500);
-      }
-
-      // Show the questions step — linger
-      await smoothScroll(page, 250, 2500);
-      await page.waitForTimeout(3000);
-      await smoothScroll(page, -250, 2000);
-      await page.waitForTimeout(2000);
-    },
-  },
-  {
     name: 'analytics',
-    label: 'Analytics — AI Insights',
+    label: 'Analytics — Dashboard',
     steps: async (page) => {
-      await page.goto(`${BASE_URL}/analytics?tab=insights`, { waitUntil: 'networkidle' });
+      await page.goto(`${BASE_URL}/analytics`, { waitUntil: 'networkidle' });
       await dismissOverlays(page);
       await page.waitForTimeout(3000);
 
-      // Click the Insights tab
-      const insightsTab = page.locator('button:has-text("Insights"), [role="tab"]:has-text("Insights")').first();
-      if (await insightsTab.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await insightsTab.click();
-        await page.waitForTimeout(3000);
-      }
-
-      // Find and type into the AI query
-      const queryInput = page.locator('textarea[placeholder*="Ask"], textarea[placeholder*="ask"], textarea[placeholder*="goals"], textarea[placeholder*="e.g."]').first();
-      if (await queryInput.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await queryInput.click();
-        await page.waitForTimeout(800);
-        await page.keyboard.type('Which coachees have completed the most sessions?', { delay: 50 });
-        await page.waitForTimeout(2500);
-
-        // Submit
-        const sendBtn = page.locator('button[type="submit"], button:has-text("Send"), button:has-text("Ask"), button[aria-label*="send"], button[aria-label*="Send"]').first();
-        if (await sendBtn.isVisible({ timeout: 2000 }).catch(() => false)) {
-          await sendBtn.click();
-        } else {
-          await page.keyboard.press('Enter');
-        }
-        await page.waitForTimeout(6000);
-      }
-
-      // Scroll to show the response
-      await smoothScroll(page, 800, 6000);
-      await page.waitForTimeout(2000);
-      await smoothScroll(page, 800, 6000);
+      // Stay on the dashboard tab — scroll down to show charts and stats
+      await smoothScroll(page, 600, 5000);
       await page.waitForTimeout(2500);
-      await smoothScroll(page, -1600, 5000);
+      await smoothScroll(page, 600, 5000);
+      await page.waitForTimeout(2500);
+      await smoothScroll(page, 600, 5000);
+      await page.waitForTimeout(2000);
+      // Scroll back to top
+      await smoothScroll(page, -1800, 5000);
       await page.waitForTimeout(2000);
     },
   },
