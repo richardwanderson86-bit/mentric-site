@@ -13,7 +13,7 @@ const tiers = [
       "Up to 20 active coachees",
       "Session scheduling & notes",
       "Goal & journey tracking",
-      "Pre-built feedback templates",
+      "Pre-built survey templates",
       "Resource sharing",
       "Messaging",
       "CPD hours tracking",
@@ -31,8 +31,8 @@ const tiers = [
     preamble: "Everything in Essentials, plus:",
     features: [
       "Unlimited coachees",
-      "Custom feedback templates",
-      "Multi-rater feedback",
+      "Custom survey templates",
+      "Multi-stakeholder check-ins",
       "AI-powered insights & summaries",
       "Group coaching",
       "Full analytics dashboard",
@@ -90,12 +90,12 @@ const comparisonData: ComparisonGroup[] = [
     ],
   },
   {
-    category: "Feedback & Evaluation",
+    category: "Surveys & Stakeholder Input",
     rows: [
-      { feature: "Pre-built feedback templates", essentials: true, professional: true, enterprise: true },
-      { feature: "Custom feedback templates", essentials: false, professional: true, enterprise: true },
+      { feature: "Pre-built survey templates", essentials: true, professional: true, enterprise: true },
+      { feature: "Custom survey templates", essentials: false, professional: true, enterprise: true },
       { feature: "AI question generation", essentials: false, professional: true, enterprise: true },
-      { feature: "Multi-rater feedback", essentials: false, professional: true, enterprise: true },
+      { feature: "Multi-stakeholder check-ins", essentials: false, professional: true, enterprise: true },
       { feature: "Competency frameworks", essentials: false, professional: false, enterprise: true },
     ],
   },
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     question: "What counts as an active coachee?",
-    answer: "An active coachee is anyone currently assigned to your practice who hasn't been archived. You can archive coachees at any time when an engagement ends. Their data is preserved and accessible, but they no longer count towards your active total.",
+    answer: "An active coachee is anyone currently assigned to your organisation who hasn't been archived. You can archive coachees at any time when an engagement ends. Their data is preserved and accessible, but they no longer count towards your active total.",
   },
   {
     question: "Can I change plans?",
@@ -247,11 +247,11 @@ const faqJsonLd = {
 
             <div class="mt-auto">
               {tier.name === "Enterprise" ? (
-                <a href="/contact" class="btn-secondary w-full text-center">Contact Sales</a>
+                <a href="/contact" class="btn-secondary w-full text-center">Let's Talk</a>
               ) : tier.highlighted ? (
-                <a href="/contact" class="btn-primary w-full text-center">Book a Demo</a>
+                <a href="/demo" class="btn-primary w-full text-center">Book a Demo</a>
               ) : (
-                <a href="/contact" class="btn-secondary w-full text-center">Book a Demo</a>
+                <a href="/demo" class="btn-secondary w-full text-center">Book a Demo</a>
               )}
             </div>
           </div>
@@ -366,7 +366,7 @@ const faqJsonLd = {
         <p class="text-white/80 text-lg md:text-xl max-w-xl mx-auto mb-8">
           Book a demo and we'll help you find the perfect fit.
         </p>
-        <a href="/contact" class="btn-accent px-8 py-4 text-base rounded-2xl">Book a Demo</a>
+        <a href="/demo" class="btn-accent px-8 py-4 text-base rounded-2xl">Book a Demo</a>
       </div>
     </div>
   </section>

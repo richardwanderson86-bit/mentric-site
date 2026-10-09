@@ -1,6 +1,7 @@
 ---
 const navItems = [
   { label: "Features", href: "/features" },
+  { label: "For Practices", href: "/for-practices" },
   { label: "For Coaches", href: "/for-coaches" },
   { label: "For Organisations", href: "/for-organisations" },
   { label: "Pricing", href: "/pricing" },
@@ -50,8 +51,8 @@ const currentPath = Astro.url.pathname;
 
       <!-- Desktop CTA -->
       <div class="hidden lg:flex items-center gap-3">
-        <a href="https://app.mentriccoaching.com/login" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm px-4 py-2"> Log In </a>
-        <a href="/contact" class="btn-primary text-sm"> Book a Demo </a>
+        <a href="https://app.mentriccoaching.com/login" class="btn-secondary text-sm px-4 py-2"> Log In </a>
+        <a href="/demo" class="btn-primary text-sm"> Book a Demo </a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -115,8 +116,8 @@ const currentPath = Astro.url.pathname;
       }
       <hr class="my-3 border-border" />
       <div class="flex flex-col gap-2 px-4 pb-2">
-        <a href="https://app.mentriccoaching.com/login" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm text-center"> Log In </a>
-        <a href="/contact" class="btn-primary text-sm text-center">
+        <a href="https://app.mentriccoaching.com/login" class="btn-secondary text-sm text-center"> Log In </a>
+        <a href="/demo" class="btn-primary text-sm text-center">
           Book a Demo
         </a>
       </div>
