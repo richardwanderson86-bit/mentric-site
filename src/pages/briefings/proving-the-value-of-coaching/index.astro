@@ -326,6 +326,11 @@ import PageLayout from '@layouts/PageLayout.astro';
     margin-top: 0.5rem !important;
   }
 
+  /* Hide the loading spinner row until MailerLite activates it */
+  .ml-form-wrapper :global(.ml-form-embedSubmit .loading) {
+    display: none !important;
+  }
+
   /* Checkbox / GDPR text */
   .ml-form-wrapper :global(.ml-form-checkboxRow label),
   .ml-form-wrapper :global(.ml-form-checkboxRow span) {
