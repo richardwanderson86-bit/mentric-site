@@ -8,6 +8,18 @@ import PageLayout from '@layouts/PageLayout.astro';
   hideStickyCta
 >
 
+  <Fragment slot="head">
+    <!-- MailerLite Universal -->
+    <script is:inline>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '2698798');
+    </script>
+    <!-- End MailerLite Universal -->
+  </Fragment>
+
   <!-- Hero + form -->
   <section class="relative overflow-hidden bg-glow-gradient">
     <div class="section-container py-10 md:py-14">
@@ -29,13 +41,9 @@ import PageLayout from '@layouts/PageLayout.astro';
         <div class="card-editorial p-6 md:p-8" id="briefing-form">
           <h2 class="text-xl md:text-2xl mb-6">Get the briefing</h2>
 
-          <!-- MAILERLITE EMBED: paste your MailerLite embedded form code below this line -->
-          <div class="mailerlite-form">
-            <div class="rounded-xl border border-dashed border-primary/30 bg-primary-light p-6 text-center">
-              <p class="text-sm text-muted">MailerLite form embed goes here. Paste the embed code to replace this placeholder.</p>
-            </div>
+          <div class="ml-form-wrapper">
+            <div class="ml-embedded" data-form="VcxWZd"></div>
           </div>
-          <!-- MAILERLITE EMBED: end -->
 
           <p class="mt-4 text-sm text-muted">
             Five emails over about two weeks. Free, and you can unsubscribe at any time. See our <a href="/privacy" class="text-primary hover:underline">privacy policy</a>.
@@ -167,3 +175,161 @@ import PageLayout from '@layouts/PageLayout.astro';
   </section>
 
 </PageLayout>
+
+<style>
+  /* MailerLite form overrides — scoped to .ml-form-wrapper so they only affect this page */
+  .ml-form-wrapper :global(.ml-form-embedContainer) {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-embedWrapper) {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-embedBody) {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-embedBody .ml-form-embedContent) {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide MailerLite's own heading — we have our own "Get the briefing" h2 */
+  .ml-form-wrapper :global(.ml-form-embedBody .ml-form-embedContent h4),
+  .ml-form-wrapper :global(.ml-form-embedBody .ml-form-embedContent p) {
+    display: none !important;
+  }
+
+  /* Font family */
+  .ml-form-wrapper :global(.ml-form-embedWrapper),
+  .ml-form-wrapper :global(.ml-form-formContent),
+  .ml-form-wrapper :global(input),
+  .ml-form-wrapper :global(label),
+  .ml-form-wrapper :global(button),
+  .ml-form-wrapper :global(.ml-form-successBody) {
+    font-family: "scandia-web", "Inter", system-ui, sans-serif !important;
+  }
+
+  /* Labels */
+  .ml-form-wrapper :global(label) {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: #2e0025 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Input fields — match demo form style */
+  .ml-form-wrapper :global(input[type="text"]),
+  .ml-form-wrapper :global(input[type="email"]),
+  .ml-form-wrapper :global(input[type="tel"]),
+  .ml-form-wrapper :global(select),
+  .ml-form-wrapper :global(textarea) {
+    width: 100% !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid #e8e8eb !important;
+    background-color: #ffffff !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+    color: #2e0025 !important;
+    transition: all 0.2s !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .ml-form-wrapper :global(input[type="text"]::placeholder),
+  .ml-form-wrapper :global(input[type="email"]::placeholder),
+  .ml-form-wrapper :global(input[type="tel"]::placeholder),
+  .ml-form-wrapper :global(textarea::placeholder) {
+    color: rgba(100, 116, 139, 0.5) !important;
+  }
+
+  .ml-form-wrapper :global(input[type="text"]:focus),
+  .ml-form-wrapper :global(input[type="email"]:focus),
+  .ml-form-wrapper :global(input[type="tel"]:focus),
+  .ml-form-wrapper :global(select:focus),
+  .ml-form-wrapper :global(textarea:focus) {
+    border-color: rgba(213, 45, 145, 0.5) !important;
+    box-shadow: 0 0 0 2px rgba(213, 45, 145, 0.3) !important;
+    outline: none !important;
+  }
+
+  /* Submit button — pill shape, plum background */
+  .ml-form-wrapper :global(.ml-form-embedSubmit button),
+  .ml-form-wrapper :global(button[type="submit"]) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.75rem 2.5rem !important;
+    border-radius: 0.75rem !important;
+    background-color: #2f0027 !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease-out !important;
+    box-shadow: none !important;
+    width: 100% !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-embedSubmit button:hover),
+  .ml-form-wrapper :global(button[type="submit"]:hover) {
+    box-shadow: 0 0 24px rgba(192, 55, 147, 0.25) !important;
+    transform: scale(1.02) !important;
+  }
+
+  /* Success state */
+  .ml-form-wrapper :global(.ml-form-successBody) {
+    padding: 1rem 0 !important;
+    background: transparent !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-successBody .ml-form-successContent) {
+    padding: 0 !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-successBody h4) {
+    font-weight: 900 !important;
+    color: #2e0025 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-successBody p) {
+    color: #64748b !important;
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Remove any MailerLite branding/footer */
+  .ml-form-wrapper :global(.ml-form-embedPermissions),
+  .ml-form-wrapper :global(.ml-form-embedTe498498) {
+    display: none !important;
+  }
+
+  /* Form field rows spacing */
+  .ml-form-wrapper :global(.ml-form-fieldRow) {
+    margin-bottom: 1rem !important;
+  }
+
+  .ml-form-wrapper :global(.ml-form-embedSubmit) {
+    margin-top: 0.5rem !important;
+  }
+
+  /* Checkbox / GDPR text */
+  .ml-form-wrapper :global(.ml-form-checkboxRow label),
+  .ml-form-wrapper :global(.ml-form-checkboxRow span) {
+    font-size: 0.75rem !important;
+    color: #64748b !important;
+  }
+</style>
