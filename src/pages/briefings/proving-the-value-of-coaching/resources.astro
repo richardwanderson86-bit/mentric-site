@@ -1,0 +1,75 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+
+const templates = [
+  {
+    title: 'Sponsor expectations sheet',
+    email: 'from email 2',
+    description: 'Agree with the sponsor what success looks like before coaching starts, with a worked example.',
+    href: '/briefings/proving-the-value-of-coaching/sponsor-expectations-sheet.docx',
+  },
+  {
+    title: 'Reporting boundary wording',
+    email: 'from email 3',
+    description: 'Wording you can paste into your coaching agreements setting out what gets reported and what stays in the room.',
+    href: '/briefings/proving-the-value-of-coaching/reporting-boundary-wording.docx',
+  },
+  {
+    title: 'Success case interview script',
+    email: 'from email 4',
+    description: 'A short interview script for capturing the strongest examples of coaching making a difference, and learning from where it didn\'t land.',
+    href: '/briefings/proving-the-value-of-coaching/success-case-interview-script.docx',
+  },
+  {
+    title: 'Coaching impact report template',
+    email: 'from email 5',
+    description: 'A one-page report for your leadership team, with a filled-in example.',
+    href: '/briefings/proving-the-value-of-coaching/coaching-impact-report-template.docx',
+  },
+];
+---
+
+<PageLayout
+  title="Briefing templates | Proving the value of coaching | Mentric"
+  robots="noindex, nofollow"
+  hideStickyCta
+>
+
+  <!-- Header -->
+  <section class="relative overflow-hidden bg-glow-gradient">
+    <div class="section-container py-10 md:py-14">
+      <p class="category-label mb-4">Proving the value of coaching</p>
+      <h1>Your briefing templates</h1>
+      <p class="mt-6 text-lg md:text-xl max-w-3xl">
+        All four templates from the briefing, in one place. They're Word documents, so you can fill them in, adapt them and make them your own.
+      </p>
+    </div>
+  </section>
+
+  <!-- Template cards -->
+  <section class="bg-background">
+    <div class="section-container py-10 md:py-14">
+      <div class="grid gap-8 sm:grid-cols-2">
+        {templates.map((t) => (
+          <div class="card-editorial flex flex-col p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-3">
+              <h3 class="text-lg md:text-xl">{t.title}</h3>
+              <span class="text-xs text-muted font-medium">({t.email})</span>
+            </div>
+            <p class="text-base text-muted leading-relaxed flex-1">{t.description}</p>
+            <div class="mt-5">
+              <a href={t.href} class="btn-primary text-sm">
+                Download (Word)
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-10 text-base md:text-lg text-muted leading-relaxed">
+        Want a second pair of eyes on how you report on coaching? <a href="https://meetings-eu1.hubspot.com/richard-anderson1" target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:underline">Book a free 20-minute reporting review.</a>
+      </p>
+    </div>
+  </section>
+
+</PageLayout>

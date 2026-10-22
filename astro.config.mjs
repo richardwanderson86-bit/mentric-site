@@ -8,6 +8,8 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !/\/briefings\/[^/]+\/resources\/?$/.test(page),
+    }),
   ],
 });

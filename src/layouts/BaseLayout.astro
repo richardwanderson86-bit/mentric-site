@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  robots?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -12,6 +13,7 @@ const {
   title,
   description = "Mentric is the coaching platform that helps coaches and organisations measure, track, and amplify the impact of coaching.",
   ogImage: ogImageProp,
+  robots,
   jsonLd,
 } = Astro.props;
 
@@ -32,6 +34,10 @@ const ogImage = new URL(ogImageProp || "/og-image.png", siteBase);
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {robots && <meta name="robots" content={robots} />}
+
+    <!-- Head extras (e.g. third-party scripts) -->
+    <slot name="head" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />

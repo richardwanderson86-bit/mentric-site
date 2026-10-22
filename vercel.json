@@ -1,0 +1,40 @@
+{
+  "headers": [
+    {
+      "source": "/briefings/:briefing/resources",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/briefings/:briefing/(.*).docx",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/briefings/proving-the-value-of-coaching/sponsor-expectations-sheet.docx",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=\"Mentric - Sponsor expectations sheet.docx\"" }
+      ]
+    },
+    {
+      "source": "/briefings/proving-the-value-of-coaching/reporting-boundary-wording.docx",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=\"Mentric - Reporting boundary wording.docx\"" }
+      ]
+    },
+    {
+      "source": "/briefings/proving-the-value-of-coaching/success-case-interview-script.docx",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=\"Mentric - Success case interview script.docx\"" }
+      ]
+    },
+    {
+      "source": "/briefings/proving-the-value-of-coaching/coaching-impact-report-template.docx",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=\"Mentric - Coaching impact report template.docx\"" }
+      ]
+    }
+  ]
+}

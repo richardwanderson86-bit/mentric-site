@@ -2,6 +2,16 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
+const featuredBriefings = [
+  {
+    label: 'Free briefing',
+    title: 'Proving the value of coaching',
+    text: 'Five short emails on showing your coaching programme is working, with four templates you can use straight away.',
+    buttonText: 'Get the briefing',
+    href: '/briefings/proving-the-value-of-coaching',
+  },
+];
+
 // Get all blog posts, sorted by date (newest first)
 const posts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -38,6 +48,35 @@ function formatDate(date: Date): string {
       </p>
     </div>
   </section>
+
+  <!-- Featured briefings -->
+  {featuredBriefings.length > 0 && (
+    <section class="bg-background">
+      <div class="section-container pt-10 md:pt-14">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredBriefings.map((b) => (
+            <a href={b.href} class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary-dark to-primary transition-transform duration-300 hover:-translate-y-1">
+              <div class="flex flex-col flex-1 p-6 md:p-8">
+                <span class="self-start inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest bg-white/20 text-white">
+                  {b.label}
+                </span>
+                <h3 class="mt-4 text-lg md:text-xl font-semibold text-white leading-snug">
+                  {b.title}
+                </h3>
+                <p class="mt-3 text-sm text-white/80 leading-relaxed flex-1">
+                  {b.text}
+                </p>
+                <span class="mt-5 inline-flex items-center text-sm font-semibold text-white group-hover:gap-2 gap-1 transition-all duration-200">
+                  {b.buttonText}
+                  <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Resource Grid -->
   <section class="bg-background">
