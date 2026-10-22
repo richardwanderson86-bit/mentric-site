@@ -7,6 +7,12 @@
       ]
     },
     {
+      "source": "/briefings/:briefing/resources/",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
       "source": "/briefings/:briefing/(.*).docx",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
