@@ -75,19 +75,25 @@ const hubspotPortalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
 
     {/* --- Analytics (production only) --- */}
     {isProd && gaMeasurementId && (
-      <script is:inline define:vars={{ gaMeasurementId }}>
-        // Google Consent Mode v2 — default all denied until cookie banner consent
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag("consent", "default", {
-          analytics_storage: "denied",
-          ad_storage: "denied",
-          ad_user_data: "denied",
-          ad_personalization: "denied",
-          wait_for_update: 500,
-        });
-        gtag("js", new Date());
-        gtag("config", gaMeasurementId, { send_page_view: true });
+      <script is:inline data-ga-id={gaMeasurementId}>
+        // Google Consent Mode v2 — default all denied until cookie banner consent.
+        // NOTE: do NOT use Astro define:vars here — it wraps the script in an
+        // IIFE, which prevents gtag from being a true global. Google's gtag.js
+        // expects window.dataLayer and window.gtag to exist at the top level.
+        (function(){
+          var id = document.currentScript.getAttribute("data-ga-id");
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);};
+          gtag("consent", "default", {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            wait_for_update: 500,
+          });
+          gtag("js", new Date());
+          gtag("config", id, { send_page_view: true });
+        })();
 
         // Bridge: HubSpot cookie banner → Google Consent Mode update.
         // The listener fires immediately for returning visitors who already
@@ -96,7 +102,7 @@ const hubspotPortalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
         // "allowed" is true for accept-all / notify-only / banner-disabled;
         // "categories" provides granular flags when the banner uses category mode.
         // We must check both: allowed acts as a master override.
-        var _hsp = window._hsp = window._hsp || [];
+        window._hsp = window._hsp || [];
         _hsp.push(["addPrivacyConsentListener", function(consent) {
           var hasAnalytics = consent.allowed || (consent.categories && consent.categories.analytics);
           var hasAds = consent.allowed || (consent.categories && consent.categories.advertisement);
