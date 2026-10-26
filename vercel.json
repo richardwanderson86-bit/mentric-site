@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/resources/:slug((?!blog|podcast).*)",
+      "destination": "/resources/blog/:slug",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/briefings/:briefing/resources",

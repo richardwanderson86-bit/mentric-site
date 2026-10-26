@@ -1,0 +1,200 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all podcast episodes, sorted by date (newest first)
+const episodes = (await getCollection('podcast', ({ data }) => !data.draft)).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'PodcastSeries',
+  name: 'Coaching Returns',
+  description: 'Conversations with the people who commission, run and prove coaching.',
+  url: 'https://www.mentriccoaching.com/resources/podcast',
+  image: 'https://www.mentriccoaching.com/images/coaching-returns-cover.png',
+};
+---
+
+<PageLayout
+  title="Coaching Returns Podcast | Mentric"
+  description="Conversations with the people who commission, run and prove coaching. A podcast by Mentric."
+  ogImage="/images/coaching-returns-cover.png"
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #2d0a2e 0%, #3d1341 40%, #2d0a2e 100%);">
+    <div class="section-container py-14 md:py-20">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <!-- Cover Art -->
+        <div class="flex-shrink-0">
+          <img
+            src="/images/coaching-returns-cover.png"
+            alt="Coaching Returns podcast cover"
+            class="w-64 md:w-80 rounded-2xl shadow-2xl"
+            loading="eager"
+          />
+        </div>
+        <!-- Info -->
+        <div class="text-center md:text-left">
+          <p class="text-xs font-semibold uppercase tracking-widest text-pink-300/80 mb-4">Podcast</p>
+          <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            Coaching
+            <span class="block italic text-amber-400" style="font-family: Georgia, 'Times New Roman', serif;">Returns</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-white/70 max-w-lg leading-relaxed">
+            Conversations with the people who commission, run and prove coaching.
+          </p>
+
+          <!-- Coming Soon Badge -->
+          <div class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
+            </span>
+            Coming Soon
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Podcast -->
+  <section class="bg-background">
+    <div class="section-container py-14 md:py-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink">What to expect</h2>
+        <p class="mt-6 text-lg text-muted leading-relaxed">
+          Coaching Returns explores the real impact of coaching through candid conversations
+          with the leaders, practitioners and organisations making it work. Each episode digs
+          into what good coaching looks like, how to measure its value, and why it matters
+          more than ever.
+        </p>
+        <div class="mt-10 grid sm:grid-cols-3 gap-6">
+          <div class="card-editorial p-6">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-ink">Honest voices</h3>
+            <p class="mt-2 text-sm text-muted">Coaches, buyers, and coachees sharing what really happens.</p>
+          </div>
+          <div class="card-editorial p-6">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-ink">Measurable impact</h3>
+            <p class="mt-2 text-sm text-muted">How organisations track and prove coaching ROI.</p>
+          </div>
+          <div class="card-editorial p-6">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-ink">Practical insight</h3>
+            <p class="mt-2 text-sm text-muted">Takeaways you can apply to your own practice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Episodes -->
+  <section class="bg-white">
+    <div class="section-container py-14 md:py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink text-center mb-10">Episodes</h2>
+
+        {episodes.length > 0 ? (
+          <div class="space-y-6">
+            {episodes.map((episode) => (
+              <a
+                href={`/resources/podcast/${episode.slug}`}
+                class="group block card-editorial p-6 md:p-8 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <div class="flex items-start gap-5">
+                  {episode.data.episodeNumber && (
+                    <div class="hidden sm:flex flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 items-center justify-center">
+                      <span class="text-sm font-bold text-primary">{episode.data.episodeNumber}</span>
+                    </div>
+                  )}
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-3 mb-2">
+                      {episode.data.episodeNumber && (
+                        <span class="sm:hidden text-xs font-semibold text-primary uppercase">
+                          Ep. {episode.data.episodeNumber}
+                        </span>
+                      )}
+                      <span class="text-xs text-muted font-medium uppercase tracking-wide">
+                        {formatDate(episode.data.date)}
+                      </span>
+                      {episode.data.duration && (
+                        <span class="text-xs text-muted/60">{episode.data.duration}</span>
+                      )}
+                    </div>
+                    <h3 class="text-lg font-semibold text-ink group-hover:text-primary transition-colors duration-200 leading-snug">
+                      {episode.data.title}
+                    </h3>
+                    <p class="mt-2 text-sm text-muted leading-relaxed line-clamp-2">
+                      {episode.data.description}
+                    </p>
+                  </div>
+                  <div class="hidden sm:flex flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+                    <svg class="w-4 h-4 text-primary group-hover:text-white transition-colors duration-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5.14v14l11-7-11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-16">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-primary/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+              </svg>
+            </div>
+            <p class="text-lg font-medium text-ink mb-2">Episodes dropping soon</p>
+            <p class="text-muted max-w-md mx-auto">
+              We're recording our first conversations now. Check back soon or follow
+              Mentric on social media to be the first to listen.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-plum-gradient">
+    <div class="section-container py-10 md:py-14 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary-200 mb-4">Be a guest</p>
+      <h2 class="text-white max-w-3xl mx-auto">Got a story to tell?</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-primary-200">
+        We're looking for coaches, L&D leaders and organisations with
+        real stories about the impact of coaching. If that's you, we'd love to chat.
+      </p>
+      <div class="mt-10">
+        <a href="/contact" class="btn-primary-lg bg-white text-primary hover:bg-primary-50 hover:shadow-glow-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
