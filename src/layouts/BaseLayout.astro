@@ -76,34 +76,41 @@ const hubspotPortalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
     {/* --- Analytics (production only) --- */}
     {isProd && gaMeasurementId && (
       <script is:inline define:vars={{ gaMeasurementId }}>
-        // Google Consent Mode v2 — default denied until user opts in
+        // Google Consent Mode v2 — default all denied until cookie banner consent
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag("consent", "default", {
           analytics_storage: "denied",
           ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
           wait_for_update: 500,
         });
         gtag("js", new Date());
         gtag("config", gaMeasurementId, { send_page_view: true });
+
+        // Bridge: HubSpot cookie banner → Google Consent Mode update.
+        // The listener fires immediately for returning visitors who already
+        // accepted, and again on banner click for new visitors.
+        // HubSpot passes { allowed: bool, categories: { analytics, advertisement, functionality } }.
+        // "allowed" is true for accept-all / notify-only / banner-disabled;
+        // "categories" provides granular flags when the banner uses category mode.
+        // We must check both: allowed acts as a master override.
+        var _hsp = window._hsp = window._hsp || [];
+        _hsp.push(["addPrivacyConsentListener", function(consent) {
+          var hasAnalytics = consent.allowed || (consent.categories && consent.categories.analytics);
+          var hasAds = consent.allowed || (consent.categories && consent.categories.advertisement);
+          gtag("consent", "update", {
+            analytics_storage: hasAnalytics ? "granted" : "denied",
+            ad_storage: hasAds ? "granted" : "denied",
+            ad_user_data: hasAds ? "granted" : "denied",
+            ad_personalization: hasAds ? "granted" : "denied",
+          });
+        }]);
       </script>
     )}
     {isProd && gaMeasurementId && (
       <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} async></script>
-    )}
-
-    {isProd && hubspotPortalId && (
-      <script is:inline define:vars={{ hubspotPortalId }}>
-        // HubSpot cookie banner consent → update Google Consent Mode
-        var _hsp = window._hsp = window._hsp || [];
-        _hsp.push(["addPrivacyConsentListener", function(consent) {
-          var status = consent.categories.analytics ? "granted" : "denied";
-          gtag("consent", "update", {
-            analytics_storage: status,
-            ad_storage: consent.categories.advertisement ? "granted" : "denied",
-          });
-        }]);
-      </script>
     )}
     {isProd && hubspotPortalId && (
       <script is:inline id="hs-script-loader" src={`https://js.hs-scripts.com/${hubspotPortalId}.js`} async defer></script>
