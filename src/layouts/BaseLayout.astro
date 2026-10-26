@@ -20,6 +20,10 @@ const {
 const siteBase = Astro.site || new URL("https://www.mentriccoaching.com");
 const canonicalUrl = new URL(Astro.url.pathname, siteBase);
 const ogImage = new URL(ogImageProp || "/og-image.png", siteBase);
+
+const isProd = import.meta.env.VERCEL_ENV === "production";
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const hubspotPortalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID;
 ---
 
 <!doctype html>
@@ -68,6 +72,42 @@ const ogImage = new URL(ogImageProp || "/og-image.png", siteBase);
     )}
 
     <!-- Global CSS is imported in frontmatter for Tailwind processing -->
+
+    {/* --- Analytics (production only) --- */}
+    {isProd && gaMeasurementId && (
+      <script is:inline define:vars={{ gaMeasurementId }}>
+        // Google Consent Mode v2 — default denied until user opts in
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("consent", "default", {
+          analytics_storage: "denied",
+          ad_storage: "denied",
+          wait_for_update: 500,
+        });
+        gtag("js", new Date());
+        gtag("config", gaMeasurementId, { send_page_view: true });
+      </script>
+    )}
+    {isProd && gaMeasurementId && (
+      <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} async></script>
+    )}
+
+    {isProd && hubspotPortalId && (
+      <script is:inline define:vars={{ hubspotPortalId }}>
+        // HubSpot cookie banner consent → update Google Consent Mode
+        var _hsp = window._hsp = window._hsp || [];
+        _hsp.push(["addPrivacyConsentListener", function(consent) {
+          var status = consent.categories.analytics ? "granted" : "denied";
+          gtag("consent", "update", {
+            analytics_storage: status,
+            ad_storage: consent.categories.advertisement ? "granted" : "denied",
+          });
+        }]);
+      </script>
+    )}
+    {isProd && hubspotPortalId && (
+      <script is:inline id="hs-script-loader" src={`https://js.hs-scripts.com/${hubspotPortalId}.js`} async defer></script>
+    )}
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
