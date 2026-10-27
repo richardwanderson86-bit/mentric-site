@@ -1,0 +1,221 @@
+---
+/**
+ * Mentric hero animation ("All in one place").
+ * Plays once when it scrolls into view, then rests on the logo and tagline.
+ * Images live in /public/hero/. Honours prefers-reduced-motion (shows the final frame).
+ *
+ * Props:
+ *   showTagline  show "Coaching. Made measurable." under the dashboard (default true). The closing logo always has the tagline.
+ *   class        extra classes for the outer element
+ */
+interface Props {
+  showTagline?: boolean;
+  class?: string;
+}
+const { showTagline = true, class: className = "" } = Astro.props;
+---
+<div class={`mh ${className}`} data-tagline={String(showTagline)}>
+  <div class="mh-anim" role="img" aria-label="Coaching scattered across six tools and no clear way to prove it works. The answer: Mentric, bringing it all into one analytics dashboard. Coaching. Made measurable.">
+      <div class="scene">
+        <div class="win a" style="--i:0;--j:0;--x:-30cqw;--y:-17cqh;--z:0cqw;--r:-6deg;--ry:14deg"><div class="wi sheet"><div class="bar"><i></i><i></i><i></i><b>Spreadsheet</b></div><div class="wb"></div></div></div><div class="win a" style="--i:1;--j:1;--x:1cqw;--y:-25cqh;--z:-8cqw;--r:4deg;--ry:-6deg"><div class="wi cal"><div class="bar"><i></i><i></i><i></i><b>Calendar</b></div><div class="wb"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div><div class="win a" style="--i:2;--j:2;--x:30cqw;--y:-13cqh;--z:3cqw;--r:7deg;--ry:-14deg"><div class="wi mail"><div class="bar"><i></i><i></i><i></i><b>Email</b></div><div class="wb"><span></span><span></span><span></span><span></span></div></div></div><div class="win a" style="--i:3;--j:3;--x:-29cqw;--y:19cqh;--z:5cqw;--r:5deg;--ry:12deg"><div class="wi notes"><div class="bar"><i></i><i></i><i></i><b>Session notes</b></div><div class="wb"><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div><div class="win a" style="--i:4;--j:4;--x:3cqw;--y:21cqh;--z:-6cqw;--r:-4deg;--ry:8deg"><div class="wi survey"><div class="bar"><i></i><i></i><i></i><b>Survey forms</b></div><div class="wb"><span style="--w:72%"></span><span style="--w:45%"></span><span style="--w:88%"></span><span style="--w:30%"></span></div></div></div><div class="win a" style="--i:5;--j:5;--x:31cqw;--y:20cqh;--z:0cqw;--r:-7deg;--ry:-12deg"><div class="wi video"><div class="bar"><i></i><i></i><i></i><b>Video calls</b></div><div class="wb"><span></span><span></span></div></div></div>
+        <div class="win b" style="--i:0;--j:6;--fx:-46cqw;--fy:0cqh;--x:-27cqw;--y:-15cqh;--z:2cqw;--r:-5deg;--ry:12deg"><div class="wi hrmail"><div class="bar"><i></i><i></i><i></i><b>Inbox</b></div><div class="wb txt"><div class="from">From: HR Director</div><div class="subj">Was the coaching worth it?</div><span></span><span></span><span></span></div></div></div><div class="win b" style="--i:1;--j:7;--fx:46cqw;--fy:2cqh;--x:27cqw;--y:-17cqh;--z:-4cqw;--r:6deg;--ry:-12deg"><div class="wi fform"><div class="bar"><i></i><i></i><i></i><b>Feedback form</b></div><div class="wb txt"><div class="row"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="row"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i><i></i><i></i></div></div></div></div><div class="win b" style="--i:2;--j:8;--fx:-14cqw;--fy:-40cqh;--x:-25cqw;--y:19cqh;--z:4cqw;--r:4deg;--ry:10deg"><div class="wi slide"><div class="bar"><i></i><i></i><i></i><b>Board slides</b></div><div class="wb txt"><div class="ttl">Coaching ROI</div><div class="chart">?</div></div></div></div><div class="win b" style="--i:3;--j:9;--fx:16cqw;--fy:44cqh;--x:27cqw;--y:19cqh;--z:0cqw;--r:-6deg;--ry:-10deg"><div class="wi qsheet"><div class="bar"><i></i><i></i><i></i><b>ROI tracker</b></div><div class="wb txt"><span class="h">Cohort</span><span class="h">Before</span><span class="h">After</span><span class="h">ROI</span><span></span><span>?</span><span>?</span><span>?</span><span></span><span>?</span><span></span><span>?</span><span></span><span></span><span>?</span><span>?</span></div></div></div>
+        <div class="burst"></div>
+        <div class="plane"><img decoding="async" class="base" src="/hero/dashboard-base.webp" alt=""><img decoding="async" class="tile" style="left:43.333%;top:4.667%;width:9.931%;height:7.0%;--i:0" src="/hero/tile-0.webp" alt=""><img decoding="async" class="tile" style="left:54.097%;top:4.667%;width:11.528%;height:7.0%;--i:1" src="/hero/tile-1.webp" alt=""><img decoding="async" class="tile" style="left:66.458%;top:4.667%;width:9.653%;height:7.0%;--i:2" src="/hero/tile-2.webp" alt=""><img decoding="async" class="tile" style="left:76.944%;top:4.667%;width:10.625%;height:7.0%;--i:3" src="/hero/tile-3.webp" alt=""><img decoding="async" class="tile" style="left:88.403%;top:4.667%;width:9.375%;height:7.0%;--i:4" src="/hero/tile-4.webp" alt=""><img decoding="async" class="tile" style="left:18.889%;top:21.111%;width:78.889%;height:18.222%;--i:5" src="/hero/tile-5.webp" alt=""><img decoding="async" class="tile" style="left:18.889%;top:42.0%;width:52.014%;height:32.444%;--i:6" src="/hero/tile-6.webp" alt=""><img decoding="async" class="tile" style="left:72.569%;top:42.0%;width:25.208%;height:32.444%;--i:7" src="/hero/tile-7.webp" alt=""><img decoding="async" class="tile" style="left:18.889%;top:77.111%;width:38.611%;height:22.889%;--i:8" src="/hero/tile-8.webp" alt=""><img decoding="async" class="tile" style="left:59.167%;top:77.111%;width:38.611%;height:22.889%;--i:9" src="/hero/tile-9.webp" alt=""></div></div>
+        <div class="mcap q" style="--s:.3s;--d:3.1s">Is your coaching spread across six tools?</div>
+        <div class="mcap q" style="--s:3.9s;--d:3.2s">And how do you prove it’s working?</div>
+        <div class="ans">The answer…</div>
+        <div class="fw"></div><div class="endcard"><div class="endlogo"><img decoding="async" class="word" src="/hero/logo-word.webp" alt=""><img decoding="async" class="body" src="/hero/logo-c.webp" alt=""><img decoding="async" class="top" src="/hero/logo-dot-top.webp" alt=""><img decoding="async" class="bottom" src="/hero/logo-dot-bottom.webp" alt=""><img decoding="async" class="orange" src="/hero/logo-dot-right.webp" alt=""></div></div>
+        <div class="fin">Coaching. <span class="y">Made measurable.</span></div>
+        <div class="outro"><div class="endlogo"><img decoding="async" class="word" src="/hero/logo-word.webp" alt=""><img decoding="async" class="body" src="/hero/logo-c.webp" alt=""><img decoding="async" class="top" src="/hero/logo-dot-top.webp" alt=""><img decoding="async" class="bottom" src="/hero/logo-dot-bottom.webp" alt=""><img decoding="async" class="orange" src="/hero/logo-dot-right.webp" alt=""></div><div class="tagline">Coaching. <span class="y">Made measurable.</span></div></div>
+  </div>
+  <button class="mh-replay" type="button" aria-label="Replay animation">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+  </button>
+</div>
+
+<style is:global>
+.mh .scene{position:absolute;inset:0;perspective:170cqw;perspective-origin:50% 42%}
+.mh .plane{position:absolute;left:50%;top:50%;width:var(--pw);aspect-ratio:1.6;margin-left:calc(var(--pw) / -2);margin-top:calc(var(--pw) / -3.2);transform-style:preserve-3d;border-radius:calc(var(--pw) * .012)}
+.mh .plane>img.base{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:inherit;box-shadow:0 calc(var(--pw) * .03) calc(var(--pw) * .08) rgba(30,0,25,.35)}
+.mh .tile{position:absolute;display:block;border-radius:calc(var(--pw) * .006)}
+@keyframes mh-asm-tile{0%{transform:translateZ(calc(var(--pw) * .7)) translateY(calc(var(--pw) * -.08));opacity:0;box-shadow:0 0 0 rgba(0,0,0,0)}25%{opacity:1}70%{box-shadow:0 calc(var(--pw) * .02) calc(var(--pw) * .05) rgba(47,0,39,.35)}100%{transform:none;opacity:1;box-shadow:0 0 0 rgba(0,0,0,0)}}
+.mh .endcard{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:min(3cqw,5cqh)}
+.mh .endlogo{position:relative;width:min(50cqw,80cqh);aspect-ratio:1042/203}
+.mh .endlogo img{position:absolute;inset:0;width:100%;height:100%}
+@keyframes mh-endin{from{opacity:0;transform:translateY(20%) scale(1.06);filter:blur(10px)}to{opacity:1;transform:none;filter:blur(0)}}
+.mh .burst{position:absolute;left:50%;top:45%;width:30cqw;aspect-ratio:1;margin:-15cqw 0 0 -15cqw;border-radius:50%;background:radial-gradient(circle,rgba(213,45,145,.75) 0%,rgba(213,45,145,0) 65%);opacity:0;pointer-events:none}
+@keyframes mh-burst{0%{opacity:0;transform:scale(.2)}30%{opacity:1}100%{opacity:0;transform:scale(2.6)}}
+.mh .win{position:absolute;left:50%;top:45%;width:min(21cqw,34cqh);aspect-ratio:1.45;opacity:0;transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotate(var(--r)) rotateY(var(--ry))}
+@keyframes mh-win{
+  0%{opacity:0;transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(.8)}
+  12%,70%{opacity:1;transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) translate3d(0,0,-12cqw) rotate(0deg) scale(.2)}}
+.mh .wi{width:100%;height:100%;background:#fff;border-radius:min(.8cqw,1.3cqh);box-shadow:0 1.4cqw 3cqw rgba(10,0,8,.45);overflow:hidden;display:flex;flex-direction:column}
+.mh.play .wi{animation:mh-drift 2.3s ease-in-out calc(var(--i) * -.4s) infinite alternate}
+@keyframes mh-drift{from{transform:translateY(-1.2cqh) rotate(-1deg)}to{transform:translateY(1.2cqh) rotate(1deg)}}
+.mh .bar{flex:0 0 15%;background:#f1ebf0;display:flex;align-items:center;gap:min(.45cqw,.7cqh);padding:0 min(.9cqw,1.4cqh);font:500 min(1.05cqw,1.7cqh)/1 Inter,system-ui,sans-serif;color:#6d5468}
+.mh .bar i{width:min(.55cqw,.9cqh);aspect-ratio:1;border-radius:50%;background:#d9cfd7}
+.mh .bar b{font-weight:500;margin-left:min(.5cqw,.8cqh)}
+.mh .wb{flex:1;padding:min(1cqw,1.6cqh);position:relative}
+.mh .sheet .wb{background:repeating-linear-gradient(0deg,#e6dfe5 0 1px,transparent 1px 16.6%),repeating-linear-gradient(90deg,#e6dfe5 0 1px,transparent 1px 20%)}
+.mh .sheet .wb::after{content:"";position:absolute;left:20%;top:33%;width:20%;height:16.6%;background:rgba(252,186,23,.45)}
+.mh .cal .wb{display:grid;grid-template-columns:repeat(7,1fr);gap:min(.35cqw,.55cqh)}
+.mh .cal .wb span{background:#efe9ee;border-radius:2px}
+.mh .cal .wb span:nth-child(5n+3){background:#d52d91}
+.mh .cal .wb span:nth-child(7n+6){background:#fcba17}
+.mh .mail .wb,.mh .notes .wb,.mh .survey .wb{display:flex;flex-direction:column;justify-content:space-around}
+.mh .mail .wb span{height:14%;display:flex;align-items:center;gap:6%}
+.mh .mail .wb span::before{content:"";height:100%;aspect-ratio:1;border-radius:50%;background:#924198;opacity:.6}
+.mh .mail .wb span::after{content:"";height:40%;flex:1;border-radius:99px;background:#e6dfe5}
+.mh .notes .wb span{height:7%;border-radius:99px;background:#e6dfe5}
+.mh .notes .wb span:nth-child(odd){width:85%}
+.mh .notes .wb span:nth-child(3n){width:60%}
+.mh .survey .wb span{height:12%;border-radius:99px;background:linear-gradient(90deg,#d52d91 var(--w),#efe9ee var(--w))}
+.mh .video .wb{background:#2b1427;display:grid;grid-template-columns:1fr 1fr;gap:6%;padding:6%}
+.mh .video .wb span{border-radius:6px;background:radial-gradient(circle at 50% 40%,#924198 0 22%,#3d2038 23%)}
+.mh{position:relative;container-type:size;aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:16px;isolation:isolate;--pw:min(66cqw,108cqh);background:linear-gradient(160deg,#601e58 0%,#2f0027 65%)}
+.mh .plane{--pw:min(58cqw,92cqh);margin-top:calc(var(--pw) / -3.2 - 7cqh);transform:rotateX(12deg) rotateY(-10deg) scale(.95);opacity:0}
+.mh.play .plane{animation:mh-e7 1.3s cubic-bezier(.2,.8,.2,1) 12.2s both,mh-p7out .8s cubic-bezier(.5,0,.75,0) 16.8s forwards}
+@keyframes mh-e7{from{transform:scale(.25) rotateX(40deg);opacity:0;filter:brightness(1.5)}to{transform:rotateX(12deg) rotateY(-10deg) scale(.95);opacity:1;filter:brightness(1)}}
+.mh.play .burst{animation:mh-burst 1.3s cubic-bezier(.2,.7,.2,1) 12.3s both}
+.mh.play .tile{animation:mh-asm-tile .95s cubic-bezier(.2,.75,.25,1) calc(12.9s + var(--i) * .1s) both}
+.mh.play .win.a{animation:mh-wout 3.7s cubic-bezier(.65,0,.3,1) calc(var(--i) * .07s) both,mh-wfly 1.3s cubic-bezier(.6,0,.35,1) calc(11.3s + var(--j) * .05s) forwards}
+.mh.play .win.b{animation:mh-wout 3.4s cubic-bezier(.65,0,.3,1) calc(3.6s + var(--i) * .12s) both,mh-wfly 1.3s cubic-bezier(.6,0,.35,1) calc(11.3s + var(--j) * .05s) forwards}
+@keyframes mh-wout{
+  0%{opacity:0;transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(.8)}
+  13%,84%{opacity:1;transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) translate3d(calc(var(--x) * 1.3),calc(var(--y) * 1.3),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(.85)}}
+@keyframes mh-wfly{
+  0%{opacity:0;transform:translate(-50%,-50%) translate3d(var(--fx),var(--fy),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(.85)}
+  25%{opacity:1;transform:translate(-50%,-50%) translate3d(calc(var(--fx) * .85),calc(var(--fy) * .85),var(--z)) rotate(var(--r)) rotateY(var(--ry)) scale(.8)}
+  100%{opacity:0;transform:translate(-50%,-50%) translate3d(0,0,-12cqw) rotate(0deg) scale(.2)}}
+.mh .win.a{--fx:calc(var(--x) * 1.3);--fy:calc(var(--y) * 1.3)}
+.mh .txt{font:500 min(.95cqw,1.5cqh)/1.3 Inter,system-ui,sans-serif;color:#2f0027}
+.mh .hrmail .wb{display:flex;flex-direction:column;gap:7%}
+.mh .hrmail .from{color:#8a7486;font-size:min(.8cqw,1.3cqh)}
+.mh .hrmail .subj{font-weight:700}
+.mh .hrmail .wb span{height:8%;background:#efe9ee;border-radius:2px}
+.mh .hrmail .wb span:last-child{width:60%}
+.mh .fform .wb{display:flex;flex-direction:column;justify-content:space-around}
+.mh .fform .row{display:flex;gap:4%;align-items:center}
+.mh .fform .row::before{content:"";flex:0 0 34%;height:min(.5cqw,.8cqh);background:#efe9ee;border-radius:2px}
+.mh .fform .row i{width:min(1.1cqw,1.8cqh);aspect-ratio:1;border-radius:50%;border:1.5px solid #d9cfd7}
+.mh .fform .row i.on{background:#d52d91;border-color:#d52d91}
+.mh .slide .wb{display:flex;flex-direction:column;gap:6%}
+.mh .slide .ttl{font-weight:700;font-size:min(1.1cqw,1.8cqh)}
+.mh .slide .chart{flex:1;border:1.5px dashed #d9cfd7;border-radius:4px;display:flex;align-items:center;justify-content:center;font:700 italic min(3.2cqw,5cqh)/1 "Playfair Display",Georgia,serif;color:#d52d91}
+.mh .qsheet .wb{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;background:repeating-linear-gradient(0deg,#e6dfe5 0 1px,transparent 1px 25%),repeating-linear-gradient(90deg,#e6dfe5 0 1px,transparent 1px 25%);padding:0}
+.mh .qsheet .wb span{display:flex;align-items:center;justify-content:center;font:700 min(1.1cqw,1.8cqh)/1 Inter,system-ui,sans-serif;color:#d52d91}
+.mh .qsheet .wb span.h{background:#f6f1f5;color:#6d5468;font-weight:600;font-size:min(.8cqw,1.3cqh)}
+.mh .mcap{position:absolute;left:0;right:0;bottom:6cqh;text-align:center;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:min(3.6cqw,5.6cqh);color:#f3dbe9;z-index:2;opacity:0}
+.mh .mcap.q{font-weight:700;color:#fff}
+.mh.play .mcap{animation:mh-mcap var(--d) ease var(--s) both}
+@keyframes mh-mcap{0%{opacity:0;transform:translateY(40%)}12%,86%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-30%)}}
+.mh .ans{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:min(5cqw,8cqh);color:#fff;opacity:0;z-index:3}
+.mh.play .ans{animation:mh-mcap 1.7s ease 7.3s both}
+.mh .fin{position:absolute;left:0;right:0;bottom:7cqh;text-align:center;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:min(3.4cqw,5.4cqh);color:#f3dbe9;z-index:2;opacity:0}
+.mh .fin .y,.mh .tagline .y{color:#fcba17}
+.mh.play .fin{animation:mh-endin .9s cubic-bezier(.2,.7,.2,1) 15s both,mh-finout .6s ease-in 16.8s forwards}
+.mh .endcard{opacity:0}
+.mh.play .endcard{animation:mh-ecout .5s ease 10.9s both}
+@keyframes mh-ecout{from{opacity:1}to{opacity:0;transform:scale(.94)}}
+.mh .endlogo .body{transform-origin:84.53% 63.89%}
+.mh .endlogo .top{transform-origin:93.54% 38.23%}
+.mh .endlogo .bottom{transform-origin:93.54% 87.88%}
+.mh .endlogo .orange{transform-origin:97.96% 63.89%}
+.mh.play .endlogo .word{animation:mh-endin 1s cubic-bezier(.2,.7,.2,1) 9s both}
+.mh.play .endlogo .body{animation:mh-pop .7s cubic-bezier(.34,1.56,.64,1) 9.6s both}
+.mh.play .endlogo .top{animation:mh-pop .55s cubic-bezier(.34,1.56,.64,1) 9.82s both}
+.mh.play .endlogo .orange{animation:mh-pop .55s cubic-bezier(.34,1.56,.64,1) 9.94s both}
+.mh.play .endlogo .bottom{animation:mh-pop .55s cubic-bezier(.34,1.56,.64,1) 10.06s both}
+@keyframes mh-pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.mh .fw{position:absolute;inset:0;z-index:4;pointer-events:none}
+.mh .fw span{position:absolute;left:0;top:0;border-radius:50%}
+.mh .fw i{position:absolute;left:0;top:0;border-radius:50%;border:max(2px,.25cqw) solid #d52d91}
+.mh *,.mh *::before,.mh *::after{box-sizing:border-box}
+.mh-replay{position:absolute;right:2.2cqw;bottom:2.2cqw;z-index:6;width:max(30px,3.2cqw);height:max(30px,3.2cqw);border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(47,0,39,.35);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;transition:opacity .4s ease;padding:0}
+.mh.done .mh-replay,.mh .mh-replay:focus-visible{opacity:.8}
+.mh .mh-replay:hover{opacity:1}
+.mh .mh-replay:focus-visible{outline:2px solid #fcba17;outline-offset:2px}
+.mh .mh-replay svg{width:50%;height:50%}
+.mh[data-tagline="false"] .fin{display:none}
+@keyframes mh-p7out{from{transform:rotateX(12deg) rotateY(-10deg) scale(.95);opacity:1;filter:blur(0)}to{transform:rotateX(12deg) rotateY(-10deg) scale(.82);opacity:0;filter:blur(6px)}}
+@keyframes mh-finout{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-25%)}}
+.mh .outro{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:min(3cqw,5cqh);pointer-events:none}
+.mh .outro .tagline{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:min(3.6cqw,5.6cqh);color:#f3dbe9}
+.mh .outro .tagline .y{color:#fcba17}
+.mh .outro .endlogo,.mh .outro .tagline{opacity:0}
+.mh.play .outro .endlogo{animation:mh-endin 1s cubic-bezier(.2,.7,.2,1) 17.4s both}
+.mh.play .outro .tagline{animation:mh-endin .9s cubic-bezier(.2,.7,.2,1) 18s both}
+@media (prefers-reduced-motion:reduce){.mh *{animation-duration:1ms!important;animation-delay:0s!important}}
+.mh .mh-anim{position:absolute;inset:0}
+</style>
+
+<script>
+  const FIREWORK_AT = 9600;   // ms, when the icon in the "c" pops
+  const TOTAL = 19000;        // ms, full run time
+  const reduce = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  type Stage = HTMLElement & { _fw?: number; _done?: number };
+
+  function firework(s: Stage) {
+    const layer = s.querySelector<HTMLElement>(".fw");
+    const logo = s.querySelector<HTMLElement>(".endlogo");
+    if (!layer || !logo) return;
+    layer.innerHTML = "";
+    const sr = s.getBoundingClientRect(), lr = logo.getBoundingClientRect();
+    const ox = lr.left - sr.left + lr.width * 0.8453, oy = lr.top - sr.top + lr.height * 0.6389;
+    const cols = ["#d52d91", "#924198", "#fcba17", "#e8607a", "#f08a63", "#ffffff"];
+    const ring = document.createElement("i");
+    const rs = lr.height * 0.32;
+    ring.style.width = ring.style.height = rs + "px";
+    layer.appendChild(ring);
+    ring.animate(
+      [{ transform: `translate(${ox - rs / 2}px,${oy - rs / 2}px) scale(.6)`, opacity: 0.9 },
+       { transform: `translate(${ox - rs / 2}px,${oy - rs / 2}px) scale(6)`, opacity: 0 }],
+      { duration: 1100, easing: "cubic-bezier(.2,.7,.2,1)", fill: "both" }
+    );
+    for (let k = 0; k < 90; k++) {
+      const d = document.createElement("span");
+      const sz = lr.height * (0.035 + Math.random() * 0.08);
+      d.style.width = d.style.height = sz + "px";
+      d.style.background = cols[k % cols.length];
+      layer.appendChild(d);
+      const a = Math.random() * Math.PI * 2, r = lr.width * (0.14 + Math.random() * 0.46);
+      const ex = ox + Math.cos(a) * r, ey = oy + Math.sin(a) * r * 0.75;
+      d.animate(
+        [{ transform: `translate(${ox - sz / 2}px,${oy - sz / 2}px) scale(.4)`, opacity: 1 },
+         { transform: `translate(${ex - sz / 2}px,${ey - sz / 2}px) scale(1)`, opacity: 1, offset: 0.55 },
+         { transform: `translate(${ex - sz / 2}px,${ey - sz / 2 + lr.height * 0.25}px) scale(0)`, opacity: 0 }],
+        { duration: 1100 + Math.random() * 700, delay: Math.random() * 120, easing: "cubic-bezier(.12,.7,.3,1)", fill: "both" }
+      );
+    }
+  }
+
+  function play(s: Stage) {
+    window.clearTimeout(s._fw);
+    window.clearTimeout(s._done);
+    const layer = s.querySelector<HTMLElement>(".fw");
+    if (layer) layer.innerHTML = "";
+    s.classList.remove("play", "done");
+    void s.offsetWidth;
+    s.classList.add("play");
+    if (reduce()) { s.classList.add("done"); return; }
+    s._fw = window.setTimeout(() => firework(s), FIREWORK_AT);
+    s._done = window.setTimeout(() => s.classList.add("done"), TOTAL);
+  }
+
+  const stages = [...document.querySelectorAll<Stage>(".mh")];
+  stages.forEach((s) => s.querySelector(".mh-replay")?.addEventListener("click", () => play(s)));
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { play(e.target as Stage); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    stages.forEach((s) => io.observe(s));
+  } else {
+    stages.forEach(play);
+  }
+</script>

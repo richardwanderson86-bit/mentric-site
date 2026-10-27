@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sans: ['"scandia-web"', '"Inter"', "system-ui", "sans-serif"],
         display: ['"scandia-web"', '"Inter"', "system-ui", "sans-serif"],
+        accent: ['"Playfair Display"', "Georgia", "serif"],
       },
       colors: {
         primary: {

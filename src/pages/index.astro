@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import HeroMotion from "../components/HeroMotion.astro";
 
 const jsonLd = [
   {
@@ -8,7 +9,7 @@ const jsonLd = [
     "name": "Mentric",
     "url": "https://www.mentriccoaching.com",
     "logo": "https://www.mentriccoaching.com/logo.png",
-    "description": "Mentric is the platform built for coaching practices. Manage coaches, deliver programmes, and evidence impact, all under your own brand.",
+    "description": "Mentric is the coaching platform that brings structure, delivery and evidence into one place. For practices and organisations that invest in coaching.",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "hello@mentriccoaching.com",
@@ -24,7 +25,7 @@ const jsonLd = [
 ];
 ---
 
-<PageLayout title="Mentric | The Platform Built for Coaching Practices" description="Replace the five-tool sprawl with one branded platform. Manage your coaches, deliver programmes, and give sponsors the evidence they need, all under your own brand." jsonLd={jsonLd}>
+<PageLayout title="Mentric | Coaching. Made Measurable." description="One platform to deliver, manage and evidence coaching. Replace the tool sprawl with structure your coaches, coachees and sponsors actually want to use." jsonLd={jsonLd}>
 
   <!-- ============================================================
        1. HERO
@@ -34,41 +35,29 @@ const jsonLd = [
     <div class="absolute bottom-10 right-[15%] w-48 h-48 rounded-full bg-accent/[0.04] blur-3xl animate-float-delayed"></div>
 
     <div class="section-container relative py-10 md:py-14">
-      <div class="max-w-3xl">
-        <p class="category-label mb-6">FOR COACHING PRACTICES</p>
-        <h1>
-          The platform built for
-          <span class="text-primary">coaching practices</span>
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-muted max-w-2xl">
-          Replace the five-tool sprawl (video calls, calendars, email, spreadsheets,
-          survey tools) with one branded platform your coaches and clients
-          actually want to use.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row items-start gap-4">
-          <a href="/demo" class="btn-primary-lg">Book a Conversation</a>
-          <a href="/features" class="btn-secondary px-8 py-4 text-base rounded-2xl">
-            See How It Works
-          </a>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="max-w-xl">
+          <p class="category-label mb-6">THE COACHING PLATFORM</p>
+          <h1>
+            Coaching.
+            <span class="text-accent-dark italic font-accent font-bold">Made measurable.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-muted">
+            One platform to deliver, manage and evidence coaching. Replace the
+            tool sprawl with structure your coaches, coachees and sponsors
+            actually want to use.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row items-start gap-4">
+            <a href="/demo" class="btn-primary-lg">Book a Conversation</a>
+            <a href="/features" class="btn-secondary px-8 py-4 text-base rounded-2xl">
+              See How It Works
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Product preview -->
-      <div class="mt-16 max-w-5xl" data-reveal>
-        <div class="rounded-2xl border border-border bg-card shadow-editorial-lg overflow-hidden">
-          <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
-            <span class="w-3 h-3 rounded-full bg-border"></span>
-            <span class="w-3 h-3 rounded-full bg-border"></span>
-            <span class="w-3 h-3 rounded-full bg-border"></span>
-            <span class="ml-4 text-xs text-muted font-medium">app.mentriccoaching.com</span>
-          </div>
-          <!-- Video with image fallback for mobile/Safari -->
-          <div class="overflow-hidden">
-            <video class="w-full hidden md:block" autoplay loop muted playsinline>
-              <source src="/videos/command-center.webm" type="video/webm" />
-            </video>
-            <img src="/images/command-center.webp" alt="Mentric coaching command centre" class="w-full md:hidden" loading="lazy" />
-          </div>
+        <!-- Hero animation -->
+        <div class="w-full">
+          <HeroMotion showTagline={false} />
         </div>
       </div>
     </div>
@@ -81,23 +70,23 @@ const jsonLd = [
     <div class="section-container py-8">
       <div class="flex flex-wrap items-center justify-start gap-x-10 gap-y-3 text-sm text-muted" data-reveal>
         <span class="flex items-center gap-2 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-          Purpose-built for coaching practices
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          Purpose-built for coaching
         </span>
         <span class="flex items-center gap-2 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
           Your brand, not ours
         </span>
         <span class="flex items-center gap-2 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
           GDPR compliant
         </span>
         <span class="flex items-center gap-2 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
           ICF &amp; EMCC aligned
         </span>
         <span class="flex items-center gap-2 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
           WCAG AA accessible
         </span>
       </div>
@@ -116,7 +105,7 @@ const jsonLd = [
 
       <div class="grid md:grid-cols-2 gap-6" data-reveal-stagger>
         <div class="card-editorial p-8">
-          <span class="text-5xl font-black text-primary/10 leading-none">01</span>
+          <span class="text-5xl font-black text-accent/20 leading-none">01</span>
           <h4 class="mt-4 mb-3">Admin sprawl</h4>
           <p class="text-muted text-base">
             Your coaches are delivering across Zoom, Outlook, WhatsApp,
@@ -127,7 +116,7 @@ const jsonLd = [
         </div>
 
         <div class="card-editorial p-8">
-          <span class="text-5xl font-black text-primary/10 leading-none">02</span>
+          <span class="text-5xl font-black text-accent/20 leading-none">02</span>
           <h4 class="mt-4 mb-3">Proving ROI to sponsors</h4>
           <p class="text-muted text-base">
             The sponsor asks &ldquo;what did we get for our money?&rdquo; and
@@ -168,7 +157,7 @@ const jsonLd = [
         </div>
 
         <div>
-          <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-black flex items-center justify-center mb-5">
+          <div class="w-14 h-14 rounded-full bg-accent text-ink text-xl font-black flex items-center justify-center mb-5">
             2
           </div>
           <h4 class="mb-3">Deliver coaching</h4>
@@ -343,7 +332,7 @@ const jsonLd = [
         </div>
 
         <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
-          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Progress</span>
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-accent/50 mb-3 block">Progress</span>
           <h4 class="text-lg mb-2">Goals &amp; Journeys</h4>
           <p class="text-muted text-base mb-4">
             Map out development journeys with structured goals, milestones
@@ -367,7 +356,7 @@ const jsonLd = [
         </div>
 
         <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
-          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Communication</span>
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-accent/50 mb-3 block">Communication</span>
           <h4 class="text-lg mb-2">Messaging &amp; Notes</h4>
           <p class="text-muted text-base mb-4">
             Keep every conversation in context with in-app messaging,
@@ -392,7 +381,7 @@ const jsonLd = [
         </div>
 
         <div class="group p-8 rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-editorial-lg">
-          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/40 mb-3 block">Brand</span>
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-accent/50 mb-3 block">Brand</span>
           <h4 class="text-lg mb-2">White-Label &amp; Branding</h4>
           <p class="text-muted text-base mb-4">
             Your clients see your brand, not ours. Custom logos, colours,
@@ -413,7 +402,7 @@ const jsonLd = [
     <div class="section-container py-8 md:py-12">
       <div class="max-w-2xl mb-12" data-reveal>
         <p class="category-label mb-4">WHO IT'S FOR</p>
-        <h2>Built for coaching practices, and the organisations that invest in coaching</h2>
+        <h2>Built for everyone in the coaching relationship</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8" data-reveal-stagger>
@@ -475,7 +464,7 @@ const jsonLd = [
           <p class="text-sm text-muted">Every feature built for coaching practices, not adapted from HR tools</p>
         </div>
         <div>
-          <p class="text-5xl font-black text-primary mb-2">All</p>
+          <p class="text-5xl font-black text-accent mb-2">All</p>
           <p class="text-sm font-bold text-ink mb-1">Under your brand</p>
           <p class="text-sm text-muted">White-label the platform with your logo, colours and fonts, per client</p>
         </div>
@@ -485,14 +474,14 @@ const jsonLd = [
           <p class="text-sm text-muted">Inclusive design with dyslexia fonts, high contrast, and more</p>
         </div>
         <div>
-          <p class="text-5xl font-black text-primary mb-2">AI</p>
+          <p class="text-5xl font-black text-accent mb-2">AI</p>
           <p class="text-sm font-bold text-ink mb-1">Powered insights</p>
           <p class="text-sm text-muted">Ask questions in plain English, get data-backed answers</p>
         </div>
       </div>
 
       <div class="max-w-3xl mt-16" data-reveal>
-        <blockquote class="border-l-2 border-primary/30 pl-8">
+        <blockquote class="border-l-2 border-accent pl-8">
           <p class="text-xl md:text-2xl font-light italic leading-relaxed text-ink">
             "A four-person practice should be able to present to a client
             and look like a forty-person firm. That's what Mentric makes possible."
